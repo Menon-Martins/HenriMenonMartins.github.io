@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn Go from zero. Free tutorial with Beginner, Intermediate, and Advanced levels." />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>Go Tutorial — CodeHub</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container nav"><a class="brand" href="../index.html" aria-label="CodeHub home"><span class="logo" aria-hidden="true"></></span><span>CodeHub</span></a><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button><nav aria-label="Primary"><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../languages.html" class="active">Languages</a></li><li><a href="../index.html#start">Start Here</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></nav><button class="theme-toggle" aria-label="Switch to dark mode">🌙</button></div></header>
+  <main id="main">
+    <nav class="breadcrumb container" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="../languages.html">Languages</a><span>›</span><span aria-current="page">Go</span></nav>
+    <div class="container tutorial-layout">
+      <aside class="toc" aria-label="Table of contents"><h4>Contents</h4><ul><li><a href="#what">What is Go?</a></li><li><a href="#setup">Run Online (No Install)</a></li><li><a href="#beginner">Beginner</a></li><li><a href="#intermediate">Intermediate</a></li><li><a href="#advanced">Advanced</a></li><li><a href="#next">What's Next?</a></li></ul></aside>
+      <article class="lesson">
+        <h1>🐳 Go — Learn From Zero</h1>
+        <p class="callout play"><span class="ico" aria-hidden="true">🎮</span><strong>Playground:</strong> <a href="https://go.dev/play" target="_blank" rel="noopener">Go Playground</a> — click, type, run.</p>
+
+        <section id="what"><h2>What is Go?</h2><p>Go (Golang) is a <strong>fast, statically-typed</strong> language by Google. Built for concurrency and cloud infrastructure.</p><ul><li>Cloud services &amp; microservices</li><li>DevOps tooling (Docker, Kubernetes)</li><li>High-performance APIs</li><li>CLI tools</li></ul></section>
+
+        <section id="setup"><h2>Run Online — No Install</h2><p>Use the playground links above.</p></section>
+
+        <!-- LEVEL TABS -->
+        <div class="level-tabs" role="tablist" aria-label="Difficulty level">
+          <button class="level-tab" role="tab" aria-selected="true" data-level="beginner" id="tab-beginner">🟢 Beginner</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="intermediate" id="tab-intermediate">🟡 Intermediate</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="advanced" id="tab-advanced">🔴 Advanced</button>
+        </div>
+
+        <!-- BEGINNER PANEL -->
+        <section id="beginner" class="level-panel" data-level="beginner" role="tabpanel" aria-labelledby="tab-beginner">
+          <h2>🟢 Beginner — Core Basics</h2>
+          <section id="hello"><h3>Your First Program</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">go</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>package main
+import "fmt"
+func main() {
+  fmt.Println("Hello, world!")
+}</code></pre></div><p>Every program has <code>package main</code>.</p></section>
+          <section id="vars"><h3>Variables & Types</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">go</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>var age int = 36
+height := 1.78
+name := "Ada"
+isStudent := true</code></pre></div><p>Use <code>:=</code> for short declaration.</p></section>
+          <section id="control"><h3>If / Else</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">go</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>if age := 18; age >= 18 {
+  fmt.Println("Vote")
+} else {
+  fmt.Println("Too young")
+}</code></pre></div><p>If can include an init statement.</p></section>
+          <section id="loops"><h3>Loops</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">go</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>for i := 0; i < 5; i++ {
+  fmt.Println(i)
+}</code></pre></div><p>Go has only <code>for</code> loops.</p></section>
+          <section id="functions"><h3>Functions</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">go</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>func add(a int, b int) int {
+  return a + b
+}</code></pre></div><p>Types come after names.</p></section>
+          <section id="slices"><h3>Slices & Maps</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">go</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>fruits := []string{"apple", "banana"}
+fruits = append(fruits, "cherry")
+m := map[string]int{"Ada": 36}</code></pre></div><p>Slices are dynamic; maps are built-in.</p></section>
+        </section>
+
+        <!-- INTERMEDIATE PANEL -->
+        <section id="intermediate" class="level-panel" data-level="intermediate" role="tabpanel" aria-labelledby="tab-intermediate">
+          <h2>🟡 Intermediate — Building Real Programs</h2>
+          <section id="structs"><h3>Structs</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">go</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>type Person struct {
+  Name string
+  Age  int
+}
+p := Person{"Ada", 36}</code></pre></div><p>Group fields in structs.</p></section>
+          <section id="methods"><h3>Methods</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">go</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>func (p Person) Greet() string {
+  return "Hi " + p.Name
+}</code></pre></div><p>Methods have a receiver.</p></section>
+          <section id="interfaces"><h3>Interfaces</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">go</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>type Stringer interface { String() string }
+// satisfied implicitly</code></pre></div><p>Duck typing via interfaces.</p></section>
+          <section id="errors"><h3>Error Handling</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">go</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>f, err := os.Open("a.txt")
+if err != nil {
+  log.Fatal(err)
+}</code></pre></div><p>Errors are values, checked explicitly.</p></section>
+          <section id="packages"><h3>Packages</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">go</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>import (
+  "fmt"
+  "os"
+)</code></pre></div><p>Group imports in parentheses.</p></section>
+        </section>
+
+        <!-- ADVANCED PANEL -->
+        <section id="advanced" class="level-panel" data-level="advanced" role="tabpanel" aria-labelledby="tab-advanced">
+          <h2>🔴 Advanced — Pro Concepts</h2>
+          <section id="goroutines"><h3>Goroutines</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">go</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>go func() {
+  fmt.Println("async")
+}()</code></pre></div><p>Lightweight threads via <code>go</code>.</p></section>
+          <section id="channels"><h3>Channels</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">go</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>ch := make(chan int)
+go func() { ch <- 1 }()
+fmt.Println(<-ch)</code></pre></div><p>Communicate via channels.</p></section>
+          <section id="sync"><h3>Sync & Mutex</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">go</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>var mu sync.Mutex
+mu.Lock()
+// critical section
+mu.Unlock()</code></pre></div><p>Protect shared state.</p></section>
+          <section id="generics"><h3>Generics (Go 1.18+)</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">go</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>func Map[T any](s []T, f func(T) T) []T { return s }</code></pre></div><p>Type parameters with <code>any</code>.</p></section>
+        </section>
+
+        <section id="next"><h2>What's Next?</h2><ul><li>Build a tiny project: <em>Calculator</em>, <em>To-Do App</em>, <em>Weather Widget</em></li><li>Read the official docs and a good book</li><li>Solve <a href="https://exercism.org" target="_blank" rel="noopener">Exercism</a> exercises</li><li>Join a community &amp; share your code</li></ul><p class="callout play"><span class="ico" aria-hidden="true">🎮</span>Practice daily for 20 minutes. Consistency &gt; intensity.</p></section>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom"><p>© <span id="year"></span> CodeHub. Free for everyone.</p></div></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

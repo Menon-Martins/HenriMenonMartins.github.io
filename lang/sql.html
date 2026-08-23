@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn SQL from zero. Free tutorial with Beginner, Intermediate, and Advanced levels." />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>SQL Tutorial — CodeHub</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container nav"><a class="brand" href="../index.html" aria-label="CodeHub home"><span class="logo" aria-hidden="true"></></span><span>CodeHub</span></a><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button><nav aria-label="Primary"><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../languages.html" class="active">Languages</a></li><li><a href="../index.html#start">Start Here</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></nav><button class="theme-toggle" aria-label="Switch to dark mode">🌙</button></div></header>
+  <main id="main">
+    <nav class="breadcrumb container" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="../languages.html">Languages</a><span>›</span><span aria-current="page">SQL</span></nav>
+    <div class="container tutorial-layout">
+      <aside class="toc" aria-label="Table of contents"><h4>Contents</h4><ul><li><a href="#what">What is SQL?</a></li><li><a href="#setup">Run Online (No Install)</a></li><li><a href="#beginner">Beginner</a></li><li><a href="#intermediate">Intermediate</a></li><li><a href="#advanced">Advanced</a></li><li><a href="#next">What's Next?</a></li></ul></aside>
+      <article class="lesson">
+        <h1>💿 SQL — Learn From Zero</h1>
+        <p class="callout play"><span class="ico" aria-hidden="true">🎮</span><strong>Playground:</strong> <a href="https://www.db-fiddle.com" target="_blank" rel="noopener">DB Fiddle</a> | <a href="https://sqliteonline.com" target="_blank" rel="noopener">SQLite Online</a> — click, type, run.</p>
+
+        <section id="what"><h2>What is SQL?</h2><p>SQL is the <strong>language of databases</strong>. It queries, inserts, and manages data in relational systems (PostgreSQL, MySQL, SQLite).</p><ul><li>Backend data storage</li><li>Analytics &amp; reporting</li><li>Data engineering</li><li>Almost every app's backend</li></ul></section>
+
+        <section id="setup"><h2>Run Online — No Install</h2><p>Use the playground links above.</p></section>
+
+        <!-- LEVEL TABS -->
+        <div class="level-tabs" role="tablist" aria-label="Difficulty level">
+          <button class="level-tab" role="tab" aria-selected="true" data-level="beginner" id="tab-beginner">🟢 Beginner</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="intermediate" id="tab-intermediate">🟡 Intermediate</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="advanced" id="tab-advanced">🔴 Advanced</button>
+        </div>
+
+        <!-- BEGINNER PANEL -->
+        <section id="beginner" class="level-panel" data-level="beginner" role="tabpanel" aria-labelledby="tab-beginner">
+          <h2>🟢 Beginner — Core Basics</h2>
+          <section id="hello"><h3>Your First Query</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">sql</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>SELECT "Hello, world!" AS greeting;</code></pre></div><p>A query returns a result set.</p></section>
+          <section id="select"><h3>SELECT & WHERE</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">sql</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>SELECT name, age
+FROM users
+WHERE age >= 18;</code></pre></div><p>Filter rows with <code>WHERE</code>.</p></section>
+          <section id="insert"><h3>INSERT</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">sql</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>INSERT INTO users (name, age)
+VALUES ('Ada', 36);</code></pre></div><p>Add new rows.</p></section>
+          <section id="update"><h3>UPDATE & DELETE</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">sql</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>DELETE FROM users
+WHERE age < 0;</code></pre></div><p>Modify or remove rows carefully.</p></section>
+          <section id="order"><h3>ORDER & LIMIT</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">sql</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>SELECT * FROM users
+ORDER BY age DESC
+LIMIT 10;</code></pre></div><p>Sort and restrict results.</p></section>
+          <section id="functions"><h3>Aggregates</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">sql</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>SELECT COUNT(*), AVG(age)
+FROM users;</code></pre></div><p>Compute across rows.</p></section>
+        </section>
+
+        <!-- INTERMEDIATE PANEL -->
+        <section id="intermediate" class="level-panel" data-level="intermediate" role="tabpanel" aria-labelledby="tab-intermediate">
+          <h2>🟡 Intermediate — Building Real Programs</h2>
+          <section id="joins"><h3>JOINs</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">sql</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>SELECT u.name, o.total
+FROM users u
+JOIN orders o ON o.user_id = u.id;</code></pre></div><p>Combine tables by key.</p></section>
+          <section id="group"><h3>GROUP BY</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">sql</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>SELECT country, COUNT(*)
+FROM users
+GROUP BY country;</code></pre></div><p>Aggregate per group.</p></section>
+          <section id="subquery"><h3>Subqueries</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">sql</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>SELECT name FROM users
+WHERE age > (SELECT AVG(age) FROM users);</code></pre></div><p>Queries inside queries.</p></section>
+          <section id="cte"><h3>CTEs</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">sql</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>WITH adults AS (
+  SELECT * FROM users WHERE age >= 18
+)
+SELECT COUNT(*) FROM adults;</code></pre></div><p>Readable temporary result sets.</p></section>
+          <section id="index"><h3>Indexes</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">sql</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>CREATE INDEX idx_users_age
+ON users(age);</code></pre></div><p>Speed up lookups.</p></section>
+        </section>
+
+        <!-- ADVANCED PANEL -->
+        <section id="advanced" class="level-panel" data-level="advanced" role="tabpanel" aria-labelledby="tab-advanced">
+          <h2>🔴 Advanced — Pro Concepts</h2>
+          <section id="transactions"><h3>Transactions</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">sql</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>BEGIN;
+UPDATE accounts SET bal = bal - 10 WHERE id = 1;
+UPDATE accounts SET bal = bal + 10 WHERE id = 2;
+COMMIT;</code></pre></div><p>Atomic multi-step changes.</p></section>
+          <section id="window"><h3>Window Functions</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">sql</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>SELECT name,
+  RANK() OVER (ORDER BY age DESC) AS r
+FROM users;</code></pre></div><p>Compute across rows without grouping.</p></section>
+          <section id="views"><h3>Views</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">sql</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>CREATE VIEW v_adults AS
+SELECT * FROM users WHERE age >= 18;</code></pre></div><p>Reusable virtual tables.</p></section>
+          <section id="json"><h3>JSON Support</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">sql</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>SELECT data->>'name'
+FROM events
+WHERE data->>'type' = 'click';</code></pre></div><p>Query JSON columns.</p></section>
+        </section>
+
+        <section id="next"><h2>What's Next?</h2><ul><li>Build a tiny project: <em>Calculator</em>, <em>To-Do App</em>, <em>Weather Widget</em></li><li>Read the official docs and a good book</li><li>Solve <a href="https://exercism.org" target="_blank" rel="noopener">Exercism</a> exercises</li><li>Join a community &amp; share your code</li></ul><p class="callout play"><span class="ico" aria-hidden="true">🎮</span>Practice daily for 20 minutes. Consistency &gt; intensity.</p></section>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom"><p>© <span id="year"></span> CodeHub. Free for everyone.</p></div></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

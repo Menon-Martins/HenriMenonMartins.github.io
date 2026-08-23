@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn Python from zero. Free tutorial with Beginner, Intermediate, and Advanced levels. Runnable examples, no install needed." />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>Python Tutorial — CodeHub</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container nav"><a class="brand" href="../index.html" aria-label="CodeHub home"><span class="logo" aria-hidden="true"></></span><span>CodeHub</span></a><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button><nav aria-label="Primary"><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../languages.html" class="active">Languages</a></li><li><a href="../index.html#start">Start Here</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></nav><button class="theme-toggle" aria-label="Switch to dark mode">🌙</button></div></header>
+  <main id="main">
+    <nav class="breadcrumb container" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="../languages.html">Languages</a><span>›</span><span aria-current="page">Python</span></nav>
+    <div class="container tutorial-layout">
+      <aside class="toc" aria-label="Table of contents"><h4>Contents</h4><ul><li><a href="#what">What is Python?</a></li><li><a href="#setup">Run Online (No Install)</a></li><li><a href="#beginner">Beginner</a></li><li><a href="#intermediate">Intermediate</a></li><li><a href="#advanced">Advanced</a></li><li><a href="#next">What's Next?</a></li></ul></aside>
+      <article class="lesson">
+        <h1>🐍 Python — Learn From Zero</h1>
+        <p class="callout play"><span class="ico" aria-hidden="true">🎮</span><strong>Playground:</strong> <a href="https://replit.com/languages/python3" target="_blank" rel="noopener">Replit Python</a> | <a href="https://programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">Programiz</a> — click, type, run.</p>
+
+        <section id="what"><h2>What is Python?</h2><p>Python is a <strong>high-level, readable</strong> programming language. It looks almost like English, so it's perfect for beginners. It's used for:</p><ul><li>Web apps (Django, Flask, FastAPI)</li><li>Data science & AI (pandas, NumPy, PyTorch, TensorFlow)</li><li>Automation & scripts</li><li>Games, desktop apps, and more</li></ul></section>
+
+        <section id="setup"><h2>Run Online — No Install</h2><p>Open <a href="https://replit.com/languages/python3" target="_blank" rel="noopener">Replit</a>, click <strong>Create Repl</strong>, choose <strong>Python</strong>, and start typing. Or use <a href="https://programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">Programiz</a> for quick snippets.</p></section>
+
+        <!-- LEVEL TABS -->
+        <div class="level-tabs" role="tablist" aria-label="Difficulty level">
+          <button class="level-tab" role="tab" aria-selected="true" data-level="beginner" id="tab-beginner">🟢 Beginner</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="intermediate" id="tab-intermediate">🟡 Intermediate</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="advanced" id="tab-advanced">🔴 Advanced</button>
+        </div>
+
+        <!-- BEGINNER PANEL -->
+        <section id="beginner" class="level-panel" data-level="beginner" role="tabpanel" aria-labelledby="tab-beginner">
+          <h2>🟢 Beginner — Core Basics</h2>
+          
+          <section id="hello"><h3>Your First Program</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">python</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>print("Hello, world!")</code></pre></div><p><code>print()</code> writes text to the screen. Run it — you should see <code>Hello, world!</code>.</p></section>
+
+          <section id="vars"><h3>Variables & Types</h3><p>A variable stores a value. Python figures out the type automatically.</p><div class="codeblock"><div class="cb-head"><span class="cb-lang">python</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>name = "Ada"        # string (text)
+age = 36            # integer (whole number)
+height = 1.78       # float (decimal)
+is_student = True   # boolean (True / False)
+
+print(name, age, height, is_student)</code></pre></div><div class="callout tip"><span class="ico" aria-hidden="true">💡</span>Variable names: letters, numbers, underscores; can't start with a number. Use <code>snake_case</code> (lowercase with underscores).</div></section>
+
+          <section id="control"><h3>If / Else — Making Decisions</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">python</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>age = 18
+if age >= 18:
+    print("You can vote!")
+else:
+    print("Too young to vote.")</code></pre></div><p>Indentation (4 spaces) matters in Python — it defines blocks.</p></section>
+
+          <section id="loops"><h3>Loops — Repeat Yourself</h3><h4>For loop</h4><div class="codeblock"><div class="cb-head"><span class="cb-lang">python</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>for i in range(5):
+    print(i)   # prints 0, 1, 2, 3, 4</code></pre></div><h4>While loop</h4><div class="codeblock"><div class="cb-head"><span class="cb-lang">python</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>n = 3
+while n > 0:
+    print(n)
+    n -= 1
+print("Blast off! 🚀")</code></pre></div></section>
+
+          <section id="functions"><h3>Functions — Reusable Blocks</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">python</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("World"))  # Hello, World!</code></pre></div><p><code>def</code> defines a function. <code>return</code> sends a value back.</p></section>
+
+          <section id="lists"><h3>Lists & Dictionaries</h3><h4>List (ordered collection)</h4><div class="codeblock"><div class="cb-head"><span class="cb-lang">python</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>fruits = ["apple", "banana", "cherry"]
+fruits.append("date")
+print(fruits[0])   # apple
+print(len(fruits)) # 4</code></pre></div><h4>Dictionary (key → value)</h4><div class="codeblock"><div class="cb-head"><span class="cb-lang">python</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>person = {"name": "Ada", "age": 36, "lang": "Python"}
+print(person["name"])
+person["age"] = 37
+print(person)</code></pre></div></section>
+        </section>
+
+        <!-- INTERMEDIATE PANEL -->
+        <section id="intermediate" class="level-panel" data-level="intermediate" role="tabpanel" aria-labelledby="tab-intermediate">
+          <h2>🟡 Intermediate — Building Real Programs</h2>
+
+          <section id="modules"><h3>Modules & Packages</h3><p>Split code into files. <code>import</code> brings in functionality.</p><div class="codeblock"><div class="cb-head"><span class="cb-lang">python</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code># math_utils.py
+def add(a, b):
+    return a + b
+
+# main.py
+from math_utils import add
+print(add(2, 3))  # 5</code></pre></div><p>Standard library: <code>random</code>, <code>math</code>, <code>datetime</code>, <code>json</code>, <code>os</code>, <code>pathlib</code>.</p></section>
+
+          <section id="files"><h3>File I/O</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">python</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code># Write
+with open("notes.txt", "w", encoding="utf-8") as f:
+    f.write("Hello, file!\n")
+
+# Read
+with open("notes.txt", encoding="utf-8") as f:
+    content = f.read()
+print(content)</code></pre></div><p><code>with</code> auto-closes the file. Use <code>encoding="utf-8"</code> always.</p></section>
+
+          <section id="errors"><h3>Error Handling (try/except)</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">python</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>try:
+    x = int(input("Number: "))
+    print(10 / x)
+except ValueError:
+    print("That's not a number!")
+except ZeroDivisionError:
+    print("Can't divide by zero!")
+else:
+    print("Success!")
+finally:
+    print("Done.")</code></pre></div></section>
+
+          <section id="comprehensions"><h3>Comprehensions</h3><p>Concise, pythonic one-liners for creating collections.</p><div class="codeblock"><div class="cb-head"><span class="cb-lang">python</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code># List comprehension
+squares = [x*x for x in range(10)]
+# [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+# Dict comprehension
+name_len = {name: len(name) for name in ["Ada", "Grace", "Alan"]}
+# {'Ada': 3, 'Grace': 5, 'Alan': 4}
+
+# Set comprehension
+unique_lens = {len(n) for n in ["Ada", "Grace", "Alan"]}
+# {3, 4, 5}</code></pre></div></section>
+
+          <section id="venv"><h3>Virtual Environments & pip</h3><p>Isolate dependencies per project.</p><div class="codeblock"><div class="cb-head"><span class="cb-lang">bash</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code># Create venv
+python -m venv .venv
+
+# Activate (Linux/Mac)
+source .venv/bin/activate
+# Activate (Windows PowerShell)
+.venv\Scripts\Activate.ps1
+
+# Install packages
+pip install requests pandas
+
+# Save requirements
+pip freeze > requirements.txt</code></pre></div></section>
+        </section>
+
+        <!-- ADVANCED PANEL -->
+        <section id="advanced" class="level-panel" data-level="advanced" role="tabpanel" aria-labelledby="tab-advanced">
+          <h2>🔴 Advanced — Pro Python</h2>
+
+          <section id="decorators"><h3>Decorators</h3><p>Functions that modify other functions.</p><div class="codeblock"><div class="cb-head"><span class="cb-lang">python</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>import time
+from functools import wraps
+
+def timer(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        start = time.perf_counter()
+        result = func(*args, **kwargs)
+        print(f"{func.__name__} took {time.perf_counter() - start:.4f}s")
+        return result
+    return wrapper
+
+@timer
+def slow_add(a, b):
+    time.sleep(0.1)
+    return a + b
+
+print(slow_add(2, 3))</code></pre></div></section>
+
+          <section id="generators"><h3>Generators & Iterators</h3><p>Lazy evaluation — memory efficient for large data.</p><div class="codeblock"><div class="cb-head"><span class="cb-lang">python</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>def fibonacci():
+    a, b = 0, 1
+    while True:
+        yield a
+        a, b = b, a + b
+
+fib = fibonacci()
+for _ in range(10):
+    print(next(fib))  # 0 1 1 2 3 5 8 13 21 34</code></pre></div></section>
+
+          <section id="async"><h3>Async / Await</h3><p>Concurrent I/O without threads.</p><div class="codeblock"><div class="cb-head"><span class="cb-lang">python</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>import asyncio
+import aiohttp
+
+async def fetch(url):
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as resp:
+            return await resp.text()
+
+async def main():
+    urls = ["https://httpbin.org/get"] * 3
+    results = await asyncio.gather(*[fetch(u) for u in urls])
+    print(f"Fetched {len(results)} pages")
+
+asyncio.run(main())</code></pre></div></section>
+
+          <section id="typing"><h3>Type Hints (PEP 484+)</h3><p>Optional static analysis for large codebases.</p><div class="codeblock"><div class="cb-head"><span class="cb-lang">python</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>from typing import List, Dict
+
+def greet_all(names: List[str]) -> Dict[str, str]:
+    return {name: f"Hello, {name}!" for name in names}
+
+print(greet_all(["Ada", "Grace"]))</code></pre></div><p>Tools: <code>mypy</code>, <code>pyright</code>, VS Code + Pylance.</p></section>
+        </section>
+
+        <section id="next"><h2>What's Next?</h2><ul><li>Build a tiny project: <em>Guess the Number</em>, <em>To-Do List</em>, <em>Weather CLI</em></li><li>Explore <strong>data science</strong> with <code>pandas</code>, <code>polars</code>, <code>matplotlib</code></li><li>Try <strong>web</strong> with <code>FastAPI</code> or <code>Django</code></li><li>Learn <strong>testing</strong> with <code>pytest</code></li></ul><p class="callout play"><span class="ico" aria-hidden="true">🎮</span>Practice daily for 20 minutes. Consistency > intensity.</p></section>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom"><p>© <span id="year"></span> CodeHub. Free for everyone.</p></div></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn Swift from zero. Free tutorial with Beginner, Intermediate, and Advanced levels." />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>Swift Tutorial — CodeHub</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container nav"><a class="brand" href="../index.html" aria-label="CodeHub home"><span class="logo" aria-hidden="true"></></span><span>CodeHub</span></a><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button><nav aria-label="Primary"><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../languages.html" class="active">Languages</a></li><li><a href="../index.html#start">Start Here</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></nav><button class="theme-toggle" aria-label="Switch to dark mode">🌙</button></div></header>
+  <main id="main">
+    <nav class="breadcrumb container" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="../languages.html">Languages</a><span>›</span><span aria-current="page">Swift</span></nav>
+    <div class="container tutorial-layout">
+      <aside class="toc" aria-label="Table of contents"><h4>Contents</h4><ul><li><a href="#what">What is Swift?</a></li><li><a href="#setup">Run Online (No Install)</a></li><li><a href="#beginner">Beginner</a></li><li><a href="#intermediate">Intermediate</a></li><li><a href="#advanced">Advanced</a></li><li><a href="#next">What's Next?</a></li></ul></aside>
+      <article class="lesson">
+        <h1>🦋 Swift — Learn From Zero</h1>
+        <p class="callout play"><span class="ico" aria-hidden="true">🎮</span><strong>Playground:</strong> <a href="https://www.swift.org/playgrounds" target="_blank" rel="noopener">Swift Playgrounds</a> | <a href="https://replit.com/languages/swift" target="_blank" rel="noopener">Replit Swift</a> — click, type, run.</p>
+
+        <section id="what"><h2>What is Swift?</h2><p>Swift is Apple's <strong>fast, safe</strong> language for iOS, macOS, and server-side. Modern syntax with strong type safety.</p><ul><li>iOS &amp; macOS apps</li><li>Server (Vapor)</li><li>Systems scripting</li><li>ML with Core ML</li></ul></section>
+
+        <section id="setup"><h2>Run Online — No Install</h2><p>Use the playground links above.</p></section>
+
+        <!-- LEVEL TABS -->
+        <div class="level-tabs" role="tablist" aria-label="Difficulty level">
+          <button class="level-tab" role="tab" aria-selected="true" data-level="beginner" id="tab-beginner">🟢 Beginner</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="intermediate" id="tab-intermediate">🟡 Intermediate</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="advanced" id="tab-advanced">🔴 Advanced</button>
+        </div>
+
+        <!-- BEGINNER PANEL -->
+        <section id="beginner" class="level-panel" data-level="beginner" role="tabpanel" aria-labelledby="tab-beginner">
+          <h2>🟢 Beginner — Core Basics</h2>
+          <section id="hello"><h3>Your First Program</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">swift</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>print("Hello, world!")</code></pre></div><p>No <code>main</code> needed in a playground.</p></section>
+          <section id="vars"><h3>Variables & Types</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">swift</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>let name = "Ada"
+var age = 36
+let height: Double = 1.78</code></pre></div><p>Use <code>let</code> (constant) by default.</p></section>
+          <section id="control"><h3>If / Else</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">swift</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>let age = 18
+if age >= 18 {
+  print("Vote")
+} else {
+  print("Too young")
+}</code></pre></div><p>Conditionals don't need parens.</p></section>
+          <section id="loops"><h3>Loops</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">swift</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>for i in 0..<5 { print(i) }
+for fruit in ["apple", "banana"] { print(fruit) }</code></pre></div><p>Use <code>0..&lt;5</code> (half-open).</p></section>
+          <section id="functions"><h3>Functions</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">swift</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>func greet(_ name: String) -> String {
+  return "Hello, \(name)!"
+}</code></pre></div><p>String interpolation with <code>\()</code>.</p></section>
+          <section id="optionals"><h3>Optionals</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">swift</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>var s: String? = nil
+if let val = s { print(val) }
+print(s?.count ?? 0)</code></pre></div><p><code>?</code> marks optional; unwrap safely.</p></section>
+        </section>
+
+        <!-- INTERMEDIATE PANEL -->
+        <section id="intermediate" class="level-panel" data-level="intermediate" role="tabpanel" aria-labelledby="tab-intermediate">
+          <h2>🟡 Intermediate — Building Real Programs</h2>
+          <section id="structs"><h3>Structs & Classes</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">swift</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>struct Person {
+  var name: String
+  var age: Int
+}</code></pre></div><p>Value types (struct) vs reference (class).</p></section>
+          <section id="protocols"><h3>Protocols</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">swift</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>protocol Animal { func speak() }
+struct Dog: Animal { func speak() {} }</code></pre></div><p>Protocols are interfaces.</p></section>
+          <section id="closures"><h3>Closures</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">swift</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>let add: (Int, Int) -> Int = { $0 + $1 }
+print(add(2, 3))</code></pre></div><p>Trailing closures &amp; shorthands.</p></section>
+          <section id="enums"><h3>Enums</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">swift</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>enum Direction { case north, south }
+let d = Direction.north
+switch d { case .north: break; default: break }</code></pre></div><p>Powerful enums with associated values.</p></section>
+          <section id="collections"><h3>Collections</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">swift</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>let nums = [1, 2, 3]
+let even = nums.filter { $0 % 2 == 0 }</code></pre></div><p>Functional methods on collections.</p></section>
+        </section>
+
+        <!-- ADVANCED PANEL -->
+        <section id="advanced" class="level-panel" data-level="advanced" role="tabpanel" aria-labelledby="tab-advanced">
+          <h2>🔴 Advanced — Pro Concepts</h2>
+          <section id="async"><h3>async/await</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">swift</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>func load() async -> String {
+  try? await Task.sleep(nanoseconds: 1_000_000_000)
+  return "x"
+}</code></pre></div><p>Swift Concurrency model.</p></section>
+          <section id="generics"><h3>Generics</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">swift</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>func first<T>(_ arr: [T]) -> T? { arr.first }</code></pre></div><p>Type parameters.</p></section>
+          <section id="property"><h3>Property Wrappers</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">swift</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>@propertyWrapper
+struct Clamped { var wrappedValue: Int { didSet { } } }</code></pre></div><p>Reusable property logic.</p></section>
+          <section id="actors"><h3>Actors</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">swift</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>actor Bank {
+  var balance = 0
+  func deposit(_ n: Int) { balance += n }
+}</code></pre></div><p>Data-race safety for concurrency.</p></section>
+        </section>
+
+        <section id="next"><h2>What's Next?</h2><ul><li>Build a tiny project: <em>Calculator</em>, <em>To-Do App</em>, <em>Weather Widget</em></li><li>Read the official docs and a good book</li><li>Solve <a href="https://exercism.org" target="_blank" rel="noopener">Exercism</a> exercises</li><li>Join a community &amp; share your code</li></ul><p class="callout play"><span class="ico" aria-hidden="true">🎮</span>Practice daily for 20 minutes. Consistency &gt; intensity.</p></section>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom"><p>© <span id="year"></span> CodeHub. Free for everyone.</p></div></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

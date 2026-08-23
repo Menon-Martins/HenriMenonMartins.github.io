@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn PHP from zero. Free tutorial with Beginner, Intermediate, and Advanced levels." />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>PHP Tutorial — CodeHub</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container nav"><a class="brand" href="../index.html" aria-label="CodeHub home"><span class="logo" aria-hidden="true"></></span><span>CodeHub</span></a><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button><nav aria-label="Primary"><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../languages.html" class="active">Languages</a></li><li><a href="../index.html#start">Start Here</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></nav><button class="theme-toggle" aria-label="Switch to dark mode">🌙</button></div></header>
+  <main id="main">
+    <nav class="breadcrumb container" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="../languages.html">Languages</a><span>›</span><span aria-current="page">PHP</span></nav>
+    <div class="container tutorial-layout">
+      <aside class="toc" aria-label="Table of contents"><h4>Contents</h4><ul><li><a href="#what">What is PHP?</a></li><li><a href="#setup">Run Online (No Install)</a></li><li><a href="#beginner">Beginner</a></li><li><a href="#intermediate">Intermediate</a></li><li><a href="#advanced">Advanced</a></li><li><a href="#next">What's Next?</a></li></ul></aside>
+      <article class="lesson">
+        <h1>🐛 PHP — Learn From Zero</h1>
+        <p class="callout play"><span class="ico" aria-hidden="true">🎮</span><strong>Playground:</strong> <a href="https://replit.com/languages/php" target="_blank" rel="noopener">Replit PHP</a> | <a href="https://www.jdoodle.com" target="_blank" rel="noopener">JDoodle</a> — click, type, run.</p>
+
+        <section id="what"><h2>What is PHP?</h2><p>PHP is a <strong>server-side scripting</strong> language built for the web. It powers WordPress, Laravel, and ~75% of websites with a backend.</p><ul><li>Web backends &amp; CMS (WordPress)</li><li>APIs (Laravel, Symfony)</li><li>Dynamic page generation</li><li>Quick prototyping</li></ul></section>
+
+        <section id="setup"><h2>Run Online — No Install</h2><p>Use the playground links above.</p></section>
+
+        <!-- LEVEL TABS -->
+        <div class="level-tabs" role="tablist" aria-label="Difficulty level">
+          <button class="level-tab" role="tab" aria-selected="true" data-level="beginner" id="tab-beginner">🟢 Beginner</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="intermediate" id="tab-intermediate">🟡 Intermediate</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="advanced" id="tab-advanced">🔴 Advanced</button>
+        </div>
+
+        <!-- BEGINNER PANEL -->
+        <section id="beginner" class="level-panel" data-level="beginner" role="tabpanel" aria-labelledby="tab-beginner">
+          <h2>🟢 Beginner — Core Basics</h2>
+          <section id="hello"><h3>Your First Program</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">php</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code><?php
+echo "Hello, world!";
+?></code></pre></div><p>PHP code goes inside <code>&lt;?php ?&gt;</code>.</p></section>
+          <section id="vars"><h3>Variables</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">php</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>$name = "Ada";
+$age = 36;
+$height = 1.78;
+$isStudent = true;</code></pre></div><p>Variables start with <code>$</code>.</p></section>
+          <section id="control"><h3>If / Else</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">php</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>$age = 18;
+if ($age >= 18) echo "Vote";
+else echo "Too young";</code></pre></div><p>Use <code>elseif</code> for chains.</p></section>
+          <section id="loops"><h3>Loops</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">php</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>for ($i = 0; $i < 5; $i++) echo $i;
+foreach ([1,2,3] as $n) echo $n;</code></pre></div><p><code>foreach</code> is great for arrays.</p></section>
+          <section id="functions"><h3>Functions</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">php</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>function greet($name) {
+  return "Hello, $name!";
+}</code></pre></div><p>Strings interpolate variables directly.</p></section>
+          <section id="arrays"><h3>Arrays</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">php</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>$fruits = ["apple", "banana"];
+$fruits[] = "cherry";
+$person = ["name" => "Ada", "age" => 36];</code></pre></div><p>Arrays are ordered maps in PHP.</p></section>
+        </section>
+
+        <!-- INTERMEDIATE PANEL -->
+        <section id="intermediate" class="level-panel" data-level="intermediate" role="tabpanel" aria-labelledby="tab-intermediate">
+          <h2>🟡 Intermediate — Building Real Programs</h2>
+          <section id="forms"><h3>Forms & GET/POST</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">php</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>if ($_SERVER["REQUEST_METHOD"] === "POST") {
+  echo $_POST["name"];
+}</code></pre></div><p>Read input via <code>$_GET</code>/<code>$_POST</code>.</p></section>
+          <section id="classes"><h3>Classes</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">php</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>class Person {
+  public $name;
+  function __construct($n) { $this->name = $n; }
+}</code></pre></div><p>Use <code>$this</code> for instance.</p></section>
+          <section id="pdo"><h3>Database (PDO)</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">php</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>$pdo = new PDO($dsn, $u, $p);
+$stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
+$stmt->execute([1]);</code></pre></div><p>Always prepare statements (SQL injection).</p></section>
+          <section id="namespaces"><h3>Namespaces</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">php</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>namespace App\Models;
+class User {}</code></pre></div><p>Organize code in namespaces.</p></section>
+          <section id="composer"><h3>Composer</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">php</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>{
+  "require": { "monolog/monolog": "^3.0" }
+}</code></pre></div><p>PHP dependency manager.</p></section>
+        </section>
+
+        <!-- ADVANCED PANEL -->
+        <section id="advanced" class="level-panel" data-level="advanced" role="tabpanel" aria-labelledby="tab-advanced">
+          <h2>🔴 Advanced — Pro Concepts</h2>
+          <section id="traits"><h3>Traits</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">php</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>trait Logger { function log($m) { echo $m; } }
+class A { use Logger; }</code></pre></div><p>Reuse methods across classes.</p></section>
+          <section id="closures"><h3>Closures</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">php</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>$fn = function($x) { return $x * 2; };
+echo $fn(5);</code></pre></div><p>Anonymous functions with <code>use</code>.</p></section>
+          <section id="generators"><h3>Generators</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">php</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>function nums() { for ($i=0;;$i++) yield $i; }</code></pre></div><p>Lazy iteration with <code>yield</code>.</p></section>
+          <section id="attributes"><h3>Attributes (PHP 8)</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">php</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>#[Route("/home")]
+class HomeController {}</code></pre></div><p>Native annotations via attributes.</p></section>
+        </section>
+
+        <section id="next"><h2>What's Next?</h2><ul><li>Build a tiny project: <em>Calculator</em>, <em>To-Do App</em>, <em>Weather Widget</em></li><li>Read the official docs and a good book</li><li>Solve <a href="https://exercism.org" target="_blank" rel="noopener">Exercism</a> exercises</li><li>Join a community &amp; share your code</li></ul><p class="callout play"><span class="ico" aria-hidden="true">🎮</span>Practice daily for 20 minutes. Consistency &gt; intensity.</p></section>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom"><p>© <span id="year"></span> CodeHub. Free for everyone.</p></div></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

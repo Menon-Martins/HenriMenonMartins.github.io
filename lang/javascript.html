@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn JavaScript from zero. Free tutorial with Beginner, Intermediate, and Advanced levels." />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>JavaScript Tutorial — CodeHub</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container nav"><a class="brand" href="../index.html" aria-label="CodeHub home"><span class="logo" aria-hidden="true"></></span><span>CodeHub</span></a><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button><nav aria-label="Primary"><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../languages.html" class="active">Languages</a></li><li><a href="../index.html#start">Start Here</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></nav><button class="theme-toggle" aria-label="Switch to dark mode">🌙</button></div></header>
+  <main id="main">
+    <nav class="breadcrumb container" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="../languages.html">Languages</a><span>›</span><span aria-current="page">JavaScript</span></nav>
+    <div class="container tutorial-layout">
+      <aside class="toc" aria-label="Table of contents"><h4>Contents</h4><ul><li><a href="#what">What is JavaScript?</a></li><li><a href="#setup">Run Online (No Install)</a></li><li><a href="#beginner">Beginner</a></li><li><a href="#intermediate">Intermediate</a></li><li><a href="#advanced">Advanced</a></li><li><a href="#next">What's Next?</a></li></ul></aside>
+      <article class="lesson">
+        <h1>💥 JavaScript — Learn From Zero</h1>
+        <p class="callout play"><span class="ico" aria-hidden="true">🎮</span><strong>Playground:</strong> <a href="https://replit.com/languages/javascript" target="_blank" rel="noopener">Replit JS</a> | <a href="https://jsfiddle.net" target="_blank" rel="noopener">JSFiddle</a> — click, type, run.</p>
+
+        <section id="what"><h2>What is JavaScript?</h2><p>JavaScript is the <strong>language of the web</strong>. It runs in every browser and now also on servers (Node.js). It's event-driven and great for interactive apps.</p><ul><li>Websites &amp; SPAs (React, Vue, Svelte)</li><li>Backend (Node.js, Express, NestJS)</li><li>Mobile (React Native) &amp; Desktop (Electron)</li><li>Games &amp; automation</li></ul></section>
+
+        <section id="setup"><h2>Run Online — No Install</h2><p>Use the playground links above.</p></section>
+
+        <!-- LEVEL TABS -->
+        <div class="level-tabs" role="tablist" aria-label="Difficulty level">
+          <button class="level-tab" role="tab" aria-selected="true" data-level="beginner" id="tab-beginner">🟢 Beginner</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="intermediate" id="tab-intermediate">🟡 Intermediate</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="advanced" id="tab-advanced">🔴 Advanced</button>
+        </div>
+
+        <!-- BEGINNER PANEL -->
+        <section id="beginner" class="level-panel" data-level="beginner" role="tabpanel" aria-labelledby="tab-beginner">
+          <h2>🟢 Beginner — Core Basics</h2>
+          <section id="hello"><h3>Your First Program</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">javascript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>console.log("Hello, world!");</code></pre></div><p>Use <code>console.log()</code> to print to the console.</p></section>
+          <section id="vars"><h3>Variables & Types</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">javascript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>let name = "Ada";
+const age = 36;
+let isStudent = true;
+console.log(name, age, isStudent);</code></pre></div><p>Use <code>let</code> (reassignable) and <code>const</code> (constant). Avoid <code>var</code>.</p></section>
+          <section id="control"><h3>If / Else</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">javascript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>const age = 18;
+if (age >= 18) console.log("Vote");
+else console.log("Too young");</code></pre></div><p>Curly braces <code>{}</code> group statements.</p></section>
+          <section id="loops"><h3>Loops</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">javascript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>for (let i = 0; i < 5; i++) console.log(i);
+let n = 3;
+while (n-- > 0) console.log(n);</code></pre></div><p>Use <code>for...of</code> for arrays, <code>for...in</code> for object keys.</p></section>
+          <section id="functions"><h3>Functions</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">javascript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>function greet(name) {
+  return `Hello, ${name}!`;
+}
+console.log(greet("World"));</code></pre></div><p>Arrow functions: <code>const add = (a,b) =&gt; a + b;</code></p></section>
+          <section id="arrays"><h3>Arrays & Objects</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">javascript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>const fruits = ["apple", "banana"];
+fruits.push("cherry");
+const person = { name: "Ada", age: 36 };
+console.log(fruits[0], person.name);</code></pre></div><p>Arrays are dynamic; objects use <code>key: value</code>.</p></section>
+        </section>
+
+        <!-- INTERMEDIATE PANEL -->
+        <section id="intermediate" class="level-panel" data-level="intermediate" role="tabpanel" aria-labelledby="tab-intermediate">
+          <h2>🟡 Intermediate — Building Real Programs</h2>
+          <section id="modules"><h3>Modules (ESM)</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">javascript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>// math.js
+function add(a, b) { return a + b; }
+export { add };
+// main.js
+import { add } from "./math.js";
+console.log(add(2, 3));</code></pre></div><p>Modern JS uses <code>import</code>/<code>export</code>.</p></section>
+          <section id="dom"><h3>DOM & Events</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">javascript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>document.querySelector("#btn").addEventListener("click", () => {
+  alert("Clicked!");
+});</code></pre></div><p><code>querySelector</code> finds elements in the DOM.</p></section>
+          <section id="async"><h3>Promises & async/await</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">javascript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>async function load() {
+  const res = await fetch("/api/data");
+  const data = await res.json();
+  console.log(data);
+}</code></pre></div><p>Wrap <code>await</code> in <code>try/catch</code>.</p></section>
+          <section id="classes"><h3>Classes</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">javascript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>class Animal {
+  constructor(name) { this.name = name; }
+  speak() { return this.name + " sounds"; }
+}
+const dog = new Animal("Rex");</code></pre></div><p>Classes are sugar over prototypal inheritance.</p></section>
+          <section id="spread"><h3>Spread & Destructuring</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">javascript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>const more = [...[1,2,3], 4];
+const [first, ...rest] = more;
+const { name } = { name: "Ada", age: 36 };</code></pre></div><p>Spread <code>...</code> copies/merges.</p></section>
+        </section>
+
+        <!-- ADVANCED PANEL -->
+        <section id="advanced" class="level-panel" data-level="advanced" role="tabpanel" aria-labelledby="tab-advanced">
+          <h2>🔴 Advanced — Pro Concepts</h2>
+          <section id="closures"><h3>Closures</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">javascript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>function makeCounter() {
+  let count = 0;
+  return () => ++count;
+}
+const c = makeCounter();
+c(); c();</code></pre></div><p>A closure remembers its lexical scope.</p></section>
+          <section id="proxies"><h3>Proxies</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">javascript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>const p = new Proxy({}, {
+  get(t, k) { return k in t ? t[k] : "missing"; }
+});</code></pre></div><p>Proxies intercept get/set traps.</p></section>
+          <section id="eventloop"><h3>Event Loop</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">javascript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>console.log("1");
+setTimeout(() => console.log("2"), 0);
+Promise.resolve().then(() => console.log("3"));
+// 1, 3, 2</code></pre></div><p>Microtasks run before macrotasks.</p></section>
+          <section id="perf"><h3>Memoization</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">javascript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>const memo = (fn) => {
+  const cache = new Map();
+  return (n) => cache.has(n) ? cache.get(n) : cache.set(n, fn(n)).get(n);
+};</code></pre></div><p>Memoization caches results.</p></section>
+        </section>
+
+        <section id="next"><h2>What's Next?</h2><ul><li>Build a tiny project: <em>Calculator</em>, <em>To-Do App</em>, <em>Weather Widget</em></li><li>Read the official docs and a good book</li><li>Solve <a href="https://exercism.org" target="_blank" rel="noopener">Exercism</a> exercises</li><li>Join a community &amp; share your code</li></ul><p class="callout play"><span class="ico" aria-hidden="true">🎮</span>Practice daily for 20 minutes. Consistency &gt; intensity.</p></section>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom"><p>© <span id="year"></span> CodeHub. Free for everyone.</p></div></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

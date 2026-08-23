@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn Ruby from zero. Free tutorial with Beginner, Intermediate, and Advanced levels." />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>Ruby Tutorial — CodeHub</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container nav"><a class="brand" href="../index.html" aria-label="CodeHub home"><span class="logo" aria-hidden="true"></></span><span>CodeHub</span></a><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button><nav aria-label="Primary"><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../languages.html" class="active">Languages</a></li><li><a href="../index.html#start">Start Here</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></nav><button class="theme-toggle" aria-label="Switch to dark mode">🌙</button></div></header>
+  <main id="main">
+    <nav class="breadcrumb container" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="../languages.html">Languages</a><span>›</span><span aria-current="page">Ruby</span></nav>
+    <div class="container tutorial-layout">
+      <aside class="toc" aria-label="Table of contents"><h4>Contents</h4><ul><li><a href="#what">What is Ruby?</a></li><li><a href="#setup">Run Online (No Install)</a></li><li><a href="#beginner">Beginner</a></li><li><a href="#intermediate">Intermediate</a></li><li><a href="#advanced">Advanced</a></li><li><a href="#next">What's Next?</a></li></ul></aside>
+      <article class="lesson">
+        <h1>💎 Ruby — Learn From Zero</h1>
+        <p class="callout play"><span class="ico" aria-hidden="true">🎮</span><strong>Playground:</strong> <a href="https://replit.com/languages/ruby" target="_blank" rel="noopener">Replit Ruby</a> | <a href="https://www.jdoodle.com" target="_blank" rel="noopener">JDoodle</a> — click, type, run.</p>
+
+        <section id="what"><h2>What is Ruby?</h2><p>Ruby is a <strong>elegant, object-oriented</strong> language focused on developer happiness. Famous for the Rails web framework.</p><ul><li>Web apps (Ruby on Rails)</li><li>Scripts &amp; automation</li><li>Prototyping</li><li>Dev tooling</li></ul></section>
+
+        <section id="setup"><h2>Run Online — No Install</h2><p>Use the playground links above.</p></section>
+
+        <!-- LEVEL TABS -->
+        <div class="level-tabs" role="tablist" aria-label="Difficulty level">
+          <button class="level-tab" role="tab" aria-selected="true" data-level="beginner" id="tab-beginner">🟢 Beginner</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="intermediate" id="tab-intermediate">🟡 Intermediate</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="advanced" id="tab-advanced">🔴 Advanced</button>
+        </div>
+
+        <!-- BEGINNER PANEL -->
+        <section id="beginner" class="level-panel" data-level="beginner" role="tabpanel" aria-labelledby="tab-beginner">
+          <h2>🟢 Beginner — Core Basics</h2>
+          <section id="hello"><h3>Your First Program</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">ruby</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>puts "Hello, world!"</code></pre></div><p><code>puts</code> prints with a newline.</p></section>
+          <section id="vars"><h3>Variables</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">ruby</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>name = "Ada"
+age = 36
+height = 1.78
+is_student = true</code></pre></div><p>Dynamic typing, no declarations.</p></section>
+          <section id="control"><h3>If / Else</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">ruby</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>age = 18
+if age >= 18
+  puts "Vote"
+else
+  puts "Too young"
+end</code></pre></div><p>Blocks end with <code>end</code>.</p></section>
+          <section id="loops"><h3>Loops</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">ruby</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>5.times { |i| puts i }
+(0...3).each { |n| puts n }</code></pre></div><p>Idiomatic iteration with blocks.</p></section>
+          <section id="functions"><h3>Methods</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">ruby</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>def greet(name)
+  "Hello, #{name}!"
+end
+puts greet("World")</code></pre></div><p>String interpolation with <code>#{}</code>.</p></section>
+          <section id="arrays"><h3>Arrays & Hashes</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">ruby</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>fruits = ["apple", "banana"]
+fruits << "cherry"
+person = { name: "Ada", age: 36 }</code></pre></div><p>Hashes are key-value stores.</p></section>
+        </section>
+
+        <!-- INTERMEDIATE PANEL -->
+        <section id="intermediate" class="level-panel" data-level="intermediate" role="tabpanel" aria-labelledby="tab-intermediate">
+          <h2>🟡 Intermediate — Building Real Programs</h2>
+          <section id="blocks"><h3>Blocks & Procs</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">ruby</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>double = Proc.new { |x| x * 2 }
+puts double.call(5)</code></pre></div><p>Closures via blocks/procs/lambdas.</p></section>
+          <section id="classes"><h3>Classes</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">ruby</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>class Person
+  attr_accessor :name
+  def initialize(n); @name = n; end
+end</code></pre></div><p>Instance vars start with <code>@</code>.</p></section>
+          <section id="modules"><h3>Modules & Mixins</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">ruby</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>module Greetable
+  def greet; "hi"; end
+end
+class User; include Greetable; end</code></pre></div><p>Mixins add shared behavior.</p></section>
+          <section id="enums"><h3>Enumerables</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">ruby</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>nums = [1,2,3,4]
+puts nums.select { |n| n.even? }</code></pre></div><p>Rich Enumerable methods.</p></section>
+          <section id="files"><h3>File I/O</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">ruby</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>File.write("a.txt", "Hi")
+puts File.read("a.txt")</code></pre></div><p>Simple file helpers.</p></section>
+        </section>
+
+        <!-- ADVANCED PANEL -->
+        <section id="advanced" class="level-panel" data-level="advanced" role="tabpanel" aria-labelledby="tab-advanced">
+          <h2>🔴 Advanced — Pro Concepts</h2>
+          <section id="metaprog"><h3>Metaprogramming</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">ruby</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>class Foo
+  define_method(:bar) { "baz" }
+end</code></pre></div><p>Define methods at runtime.</p></section>
+          <section id="symbols"><h3>Symbols</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">ruby</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>h = { name: "Ada" }
+h[:name]</code></pre></div><p>Symbols are immutable identifiers.</p></section>
+          <section id="exception"><h3>Exceptions</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">ruby</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>begin
+  raise "oops"
+rescue => e
+  puts e.message
+end</code></pre></div><p>Use <code>begin/rescue</code>.</p></section>
+          <section id="gem"><h3>Gems & Bundler</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">ruby</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>gem "rails", "7.0"
+# bundle install</code></pre></div><p>Ruby's package ecosystem.</p></section>
+        </section>
+
+        <section id="next"><h2>What's Next?</h2><ul><li>Build a tiny project: <em>Calculator</em>, <em>To-Do App</em>, <em>Weather Widget</em></li><li>Read the official docs and a good book</li><li>Solve <a href="https://exercism.org" target="_blank" rel="noopener">Exercism</a> exercises</li><li>Join a community &amp; share your code</li></ul><p class="callout play"><span class="ico" aria-hidden="true">🎮</span>Practice daily for 20 minutes. Consistency &gt; intensity.</p></section>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom"><p>© <span id="year"></span> CodeHub. Free for everyone.</p></div></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn Rust from zero. Free tutorial with Beginner, Intermediate, and Advanced levels." />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>Rust Tutorial — CodeHub</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container nav"><a class="brand" href="../index.html" aria-label="CodeHub home"><span class="logo" aria-hidden="true"></></span><span>CodeHub</span></a><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button><nav aria-label="Primary"><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../languages.html" class="active">Languages</a></li><li><a href="../index.html#start">Start Here</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></nav><button class="theme-toggle" aria-label="Switch to dark mode">🌙</button></div></header>
+  <main id="main">
+    <nav class="breadcrumb container" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="../languages.html">Languages</a><span>›</span><span aria-current="page">Rust</span></nav>
+    <div class="container tutorial-layout">
+      <aside class="toc" aria-label="Table of contents"><h4>Contents</h4><ul><li><a href="#what">What is Rust?</a></li><li><a href="#setup">Run Online (No Install)</a></li><li><a href="#beginner">Beginner</a></li><li><a href="#intermediate">Intermediate</a></li><li><a href="#advanced">Advanced</a></li><li><a href="#next">What's Next?</a></li></ul></aside>
+      <article class="lesson">
+        <h1>🧰 Rust — Learn From Zero</h1>
+        <p class="callout play"><span class="ico" aria-hidden="true">🎮</span><strong>Playground:</strong> <a href="https://play.rust-lang.org" target="_blank" rel="noopener">Rust Playground</a> — click, type, run.</p>
+
+        <section id="what"><h2>What is Rust?</h2><p>Rust is a <strong>memory-safe, systems</strong> language without a garbage collector. It prevents bugs at compile time and is blazingly fast.</p><ul><li>Systems &amp; OS development</li><li>WebAssembly</li><li>Performance-critical services</li><li>Embedded</li></ul></section>
+
+        <section id="setup"><h2>Run Online — No Install</h2><p>Use the playground links above.</p></section>
+
+        <!-- LEVEL TABS -->
+        <div class="level-tabs" role="tablist" aria-label="Difficulty level">
+          <button class="level-tab" role="tab" aria-selected="true" data-level="beginner" id="tab-beginner">🟢 Beginner</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="intermediate" id="tab-intermediate">🟡 Intermediate</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="advanced" id="tab-advanced">🔴 Advanced</button>
+        </div>
+
+        <!-- BEGINNER PANEL -->
+        <section id="beginner" class="level-panel" data-level="beginner" role="tabpanel" aria-labelledby="tab-beginner">
+          <h2>🟢 Beginner — Core Basics</h2>
+          <section id="hello"><h3>Your First Program</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">rust</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>fn main() {
+  println!("Hello, world!");
+}</code></pre></div><p>Programs start in <code>fn main()</code>.</p></section>
+          <section id="vars"><h3>Variables & Types</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">rust</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>let age: u32 = 36;
+let height = 1.78;
+let name = "Ada";
+let is_student = true;</code></pre></div><p>Variables immutable by default; use <code>mut</code>.</p></section>
+          <section id="control"><h3>If / Else</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">rust</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>let age = 18;
+if age >= 18 {
+  println!("Vote");
+} else {
+  println!("Too young");
+}</code></pre></div><p>If is an expression (returns a value).</p></section>
+          <section id="loops"><h3>Loops</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">rust</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>for i in 0..5 {
+  println!("{i}");
+}
+let mut n = 3;
+while n > 0 { n -= 1; }</code></pre></div><p>Ranges with <code>0..5</code>.</p></section>
+          <section id="functions"><h3>Functions</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">rust</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>fn add(a: i32, b: i32) -> i32 {
+  a + b
+}</code></pre></div><p>Return type after <code>-&gt;</code>; last expr returned.</p></section>
+          <section id="collections"><h3>Vectors & HashMaps</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">rust</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>let mut v = vec![1, 2, 3];
+v.push(4);
+use std::collections::HashMap;</code></pre></div><p>Ownership applies; use <code>mut</code> to change.</p></section>
+        </section>
+
+        <!-- INTERMEDIATE PANEL -->
+        <section id="intermediate" class="level-panel" data-level="intermediate" role="tabpanel" aria-labelledby="tab-intermediate">
+          <h2>🟡 Intermediate — Building Real Programs</h2>
+          <section id="ownership"><h3>Ownership</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">rust</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>let s = String::from("hi");
+let t = s; // s moved
+// s no longer usable</code></pre></div><p>Each value has one owner.</p></section>
+          <section id="borrowing"><h3>Borrowing</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">rust</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>fn len(s: &String) -> usize { s.len() }
+let s = String::from("hi");
+let l = len(&s);</code></pre></div><p>Borrow with <code>&amp;</code>, no move.</p></section>
+          <section id="structs"><h3>Structs</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">rust</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>struct Person { name: String, age: u32 }
+impl Person {
+  fn greet(&self) {}
+}</code></pre></div><p>Implement methods with <code>impl</code>.</p></section>
+          <section id="traits"><h3>Traits</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">rust</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>trait Animal { fn speak(&self); }
+struct Dog;
+impl Animal for Dog { fn speak(&self) {} }</code></pre></div><p>Traits are interfaces.</p></section>
+          <section id="enums"><h3>Enums & Match</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">rust</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>enum Color { Red, Green }
+let c = Color::Red;
+match c { Color::Red => println!("red"), _ => {} }</code></pre></div><p>Exhaustive <code>match</code>.</p></section>
+        </section>
+
+        <!-- ADVANCED PANEL -->
+        <section id="advanced" class="level-panel" data-level="advanced" role="tabpanel" aria-labelledby="tab-advanced">
+          <h2>🔴 Advanced — Pro Concepts</h2>
+          <section id="result"><h3>Result & Option</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">rust</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>let x: Result<i32, &str> = Ok(5);
+let y = x.unwrap_or(0);</code></pre></div><p>No exceptions; use <code>Result</code>/<code>Option</code>.</p></section>
+          <section id="lifetimes"><h3>Lifetimes</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">rust</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>fn longest<'a>(x: &'a str, y: &'a str) -> &'a str { if x.len() > y.len() { x } else { y } }</code></pre></div><p>Track references' validity.</p></section>
+          <section id="closures"><h3>Closures</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">rust</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>let add = |a: i32, b: i32| a + b;
+println!("{}", add(2, 3));</code></pre></div><p>Capturing anonymous functions.</p></section>
+          <section id="async"><h3>Async</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">rust</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>async fn fetch() -> String {
+  "data".to_string()
+}</code></pre></div><p>Async via <code>tokio</code>/<code>async-std</code>.</p></section>
+        </section>
+
+        <section id="next"><h2>What's Next?</h2><ul><li>Build a tiny project: <em>Calculator</em>, <em>To-Do App</em>, <em>Weather Widget</em></li><li>Read the official docs and a good book</li><li>Solve <a href="https://exercism.org" target="_blank" rel="noopener">Exercism</a> exercises</li><li>Join a community &amp; share your code</li></ul><p class="callout play"><span class="ico" aria-hidden="true">🎮</span>Practice daily for 20 minutes. Consistency &gt; intensity.</p></section>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom"><p>© <span id="year"></span> CodeHub. Free for everyone.</p></div></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

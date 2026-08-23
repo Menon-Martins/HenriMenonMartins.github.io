@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn TypeScript from zero. Free tutorial with Beginner, Intermediate, and Advanced levels." />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>TypeScript Tutorial — CodeHub</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container nav"><a class="brand" href="../index.html" aria-label="CodeHub home"><span class="logo" aria-hidden="true"></></span><span>CodeHub</span></a><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button><nav aria-label="Primary"><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../languages.html" class="active">Languages</a></li><li><a href="../index.html#start">Start Here</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></nav><button class="theme-toggle" aria-label="Switch to dark mode">🌙</button></div></header>
+  <main id="main">
+    <nav class="breadcrumb container" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="../languages.html">Languages</a><span>›</span><span aria-current="page">TypeScript</span></nav>
+    <div class="container tutorial-layout">
+      <aside class="toc" aria-label="Table of contents"><h4>Contents</h4><ul><li><a href="#what">What is TypeScript?</a></li><li><a href="#setup">Run Online (No Install)</a></li><li><a href="#beginner">Beginner</a></li><li><a href="#intermediate">Intermediate</a></li><li><a href="#advanced">Advanced</a></li><li><a href="#next">What's Next?</a></li></ul></aside>
+      <article class="lesson">
+        <h1>📑 TypeScript — Learn From Zero</h1>
+        <p class="callout play"><span class="ico" aria-hidden="true">🎮</span><strong>Playground:</strong> <a href="https://www.typescriptlang.org/play" target="_blank" rel="noopener">TS Playground</a> — click, type, run.</p>
+
+        <section id="what"><h2>What is TypeScript?</h2><p>TypeScript is <strong>JavaScript with types</strong>. It catches errors before you run the code and gives great editor support. Compiles to plain JS.</p><ul><li>Large web apps (Angular, NestJS)</li><li>Frontend with React/Vue + strict typing</li><li>Node.js backends</li><li>Anywhere JS runs, safer</li></ul></section>
+
+        <section id="setup"><h2>Run Online — No Install</h2><p>Use the playground links above.</p></section>
+
+        <!-- LEVEL TABS -->
+        <div class="level-tabs" role="tablist" aria-label="Difficulty level">
+          <button class="level-tab" role="tab" aria-selected="true" data-level="beginner" id="tab-beginner">🟢 Beginner</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="intermediate" id="tab-intermediate">🟡 Intermediate</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="advanced" id="tab-advanced">🔴 Advanced</button>
+        </div>
+
+        <!-- BEGINNER PANEL -->
+        <section id="beginner" class="level-panel" data-level="beginner" role="tabpanel" aria-labelledby="tab-beginner">
+          <h2>🟢 Beginner — Core Basics</h2>
+          <section id="hello"><h3>Your First Program</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">typescript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>let msg: string = "Hello, world!";
+console.log(msg);</code></pre></div><p>Types are declared with <code>: type</code>.</p></section>
+          <section id="vars"><h3>Variables & Types</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">typescript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>let age: number = 36;
+let isStudent: boolean = true;
+let name: string = "Ada";</code></pre></div><p>Primitive types: <code>string</code>, <code>number</code>, <code>boolean</code>.</p></section>
+          <section id="control"><h3>If / Else</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">typescript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>const age = 18;
+if (age >= 18) {
+  console.log("Vote");
+} else {
+  console.log("Too young");
+}</code></pre></div><p>Same syntax as JS, but type-checked.</p></section>
+          <section id="loops"><h3>Loops</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">typescript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>for (let i = 0; i < 5; i++) console.log(i);</code></pre></div><p>Loops identical to JS; types inferred.</p></section>
+          <section id="functions"><h3>Functions with Types</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">typescript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>function greet(name: string): string {
+  return `Hello, ${name}!`;
+}</code></pre></div><p>Parameters and return types are annotated.</p></section>
+          <section id="arrays"><h3>Arrays & Tuples</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">typescript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>let nums: number[] = [1, 2, 3];
+let pair: [string, number] = ["Ada", 36];</code></pre></div><p>Typed arrays and fixed-shape tuples.</p></section>
+        </section>
+
+        <!-- INTERMEDIATE PANEL -->
+        <section id="intermediate" class="level-panel" data-level="intermediate" role="tabpanel" aria-labelledby="tab-intermediate">
+          <h2>🟡 Intermediate — Building Real Programs</h2>
+          <section id="interfaces"><h3>Interfaces</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">typescript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>interface Person {
+  name: string;
+  age: number;
+}
+const p: Person = { name: "Ada", age: 36 };</code></pre></div><p>Interfaces describe object shapes.</p></section>
+          <section id="generics"><h3>Generics</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">typescript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>function first<T>(arr: T[]): T {
+  return arr[0];
+}
+first<number>([1, 2, 3]);</code></pre></div><p>Generics make functions reusable &amp; safe.</p></section>
+          <section id="unions"><h3>Union & Literal Types</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">typescript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>type Status = "ok" | "error";
+let s: Status = "ok";</code></pre></div><p>Unions narrow possible values.</p></section>
+          <section id="modules"><h3>Modules</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">typescript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>// math.ts
+export function add(a: number, b: number): number {
+  return a + b;
+}</code></pre></div><p>Same <code>import</code>/<code>export</code> as ES modules.</p></section>
+          <section id="classes"><h3>Classes</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">typescript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>class Animal {
+  constructor(public name: string) {}
+  speak(): string { return this.name; }
+}</code></pre></div><p><code>public</code> auto-creates a field.</p></section>
+        </section>
+
+        <!-- ADVANCED PANEL -->
+        <section id="advanced" class="level-panel" data-level="advanced" role="tabpanel" aria-labelledby="tab-advanced">
+          <h2>🔴 Advanced — Pro Concepts</h2>
+          <section id="utility"><h3>Utility Types</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">typescript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>type PartialUser = Partial<{ name: string; age: number }>;</code></pre></div><p>Mapped/conditional types like <code>Partial</code>, <code>Pick</code>.</p></section>
+          <section id="decorators"><h3>Decorators</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">typescript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>function Log(target: any, key: string) {
+  console.log(key);
+}
+class C { @Log method() {} }</code></pre></div><p>Decorators annotate classes/methods.</p></section>
+          <section id="typeguards"><h3>Type Guards</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">typescript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>function isStr(x: unknown): x is string {
+  return typeof x === "string";
+}</code></pre></div><p><code>x is T</code> narrows types in conditions.</p></section>
+          <section id="infer"><h3>Conditional & infer</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">typescript</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>type ElementType<T> = T extends (infer E)[] ? E : never;</code></pre></div><p>Advanced type-level programming.</p></section>
+        </section>
+
+        <section id="next"><h2>What's Next?</h2><ul><li>Build a tiny project: <em>Calculator</em>, <em>To-Do App</em>, <em>Weather Widget</em></li><li>Read the official docs and a good book</li><li>Solve <a href="https://exercism.org" target="_blank" rel="noopener">Exercism</a> exercises</li><li>Join a community &amp; share your code</li></ul><p class="callout play"><span class="ico" aria-hidden="true">🎮</span>Practice daily for 20 minutes. Consistency &gt; intensity.</p></section>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom"><p>© <span id="year"></span> CodeHub. Free for everyone.</p></div></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

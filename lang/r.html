@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn R from zero. Free tutorial with Beginner, Intermediate, and Advanced levels." />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>R Tutorial — CodeHub</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container nav"><a class="brand" href="../index.html" aria-label="CodeHub home"><span class="logo" aria-hidden="true"></></span><span>CodeHub</span></a><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button><nav aria-label="Primary"><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../languages.html" class="active">Languages</a></li><li><a href="../index.html#start">Start Here</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></nav><button class="theme-toggle" aria-label="Switch to dark mode">🌙</button></div></header>
+  <main id="main">
+    <nav class="breadcrumb container" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="../languages.html">Languages</a><span>›</span><span aria-current="page">R</span></nav>
+    <div class="container tutorial-layout">
+      <aside class="toc" aria-label="Table of contents"><h4>Contents</h4><ul><li><a href="#what">What is R?</a></li><li><a href="#setup">Run Online (No Install)</a></li><li><a href="#beginner">Beginner</a></li><li><a href="#intermediate">Intermediate</a></li><li><a href="#advanced">Advanced</a></li><li><a href="#next">What's Next?</a></li></ul></aside>
+      <article class="lesson">
+        <h1>📊 R — Learn From Zero</h1>
+        <p class="callout play"><span class="ico" aria-hidden="true">🎮</span><strong>Playground:</strong> <a href="https://rdrr.io/snippets" target="_blank" rel="noopener">rdrr.io</a> | <a href="https://replit.com/languages/r" target="_blank">Replit R</a> — click, type, run.</p>
+
+        <section id="what"><h2>What is R?</h2><p>R is a <strong>statistical computing</strong> language beloved by data scientists. Excellent for analysis, visualization, and reporting.</p><ul><li>Data analysis &amp; statistics</li><li>Visualization (ggplot2)</li><li>Academic research</li><li>Reporting (R Markdown)</li></ul></section>
+
+        <section id="setup"><h2>Run Online — No Install</h2><p>Use the playground links above.</p></section>
+
+        <!-- LEVEL TABS -->
+        <div class="level-tabs" role="tablist" aria-label="Difficulty level">
+          <button class="level-tab" role="tab" aria-selected="true" data-level="beginner" id="tab-beginner">🟢 Beginner</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="intermediate" id="tab-intermediate">🟡 Intermediate</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="advanced" id="tab-advanced">🔴 Advanced</button>
+        </div>
+
+        <!-- BEGINNER PANEL -->
+        <section id="beginner" class="level-panel" data-level="beginner" role="tabpanel" aria-labelledby="tab-beginner">
+          <h2>🟢 Beginner — Core Basics</h2>
+          <section id="hello"><h3>Your First Program</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">r</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>print("Hello, world!")</code></pre></div><p>Use <code>print()</code> or just type the value.</p></section>
+          <section id="vars"><h3>Variables</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">r</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>name <- "Ada"
+age <- 36
+height <- 1.78
+is_student <- TRUE</code></pre></div><p>Assignment with <code>&lt;-</code>.</p></section>
+          <section id="control"><h3>If / Else</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">r</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>age <- 18
+if (age >= 18) {
+  print("Vote")
+} else {
+  print("Too young")
+}</code></pre></div><p>Curly braces group statements.</p></section>
+          <section id="loops"><h3>Loops</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">r</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>for (i in 1:5) print(i)
+n <- 3
+while (n > 0) { print(n); n <- n - 1 }</code></pre></div><p>Vectors drive iteration.</p></section>
+          <section id="functions"><h3>Functions</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">r</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>greet <- function(name) {
+  paste("Hello,", name, "!")
+}
+greet("World")</code></pre></div><p>Defined with <code>function()</code>.</p></section>
+          <section id="vectors"><h3>Vectors & Data Frames</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">r</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>v <- c(1, 2, 3)
+df <- data.frame(name = c("Ada"), age = c(36))</code></pre></div><p>Vectors are the core data type.</p></section>
+        </section>
+
+        <!-- INTERMEDIATE PANEL -->
+        <section id="intermediate" class="level-panel" data-level="intermediate" role="tabpanel" aria-labelledby="tab-intermediate">
+          <h2>🟡 Intermediate — Building Real Programs</h2>
+          <section id="dplyr"><h3>dplyr</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">r</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>library(dplyr)
+df %>% filter(age > 30) %>% summarise(avg = mean(age))</code></pre></div><p>Grammar of data manipulation.</p></section>
+          <section id="ggplot"><h3>ggplot2</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">r</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>library(ggplot2)
+ggplot(df, aes(x = age)) + geom_histogram()</code></pre></div><p>Layered grammar of graphics.</p></section>
+          <section id="apply"><h3>apply Family</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">r</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>sapply(1:5, function(x) x * 2)</code></pre></div><p>Vectorized iteration.</p></section>
+          <section id="read"><h3>Read Data</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">r</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>data <- read.csv("file.csv")
+head(data)</code></pre></div><p>Import CSV/Excel/JSON easily.</p></section>
+          <section id="formula"><h3>Formulas</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">r</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>model <- lm(age ~ height, data = df)
+summary(model)</code></pre></div><p>Formula syntax for stats.</p></section>
+        </section>
+
+        <!-- ADVANCED PANEL -->
+        <section id="advanced" class="level-panel" data-level="advanced" role="tabpanel" aria-labelledby="tab-advanced">
+          <h2>🔴 Advanced — Pro Concepts</h2>
+          <section id="purrr"><h3>purrr</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">r</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>library(purrr)
+map(list(1, 2), ~ .x * 2)</code></pre></div><p>Functional programming toolkit.</p></section>
+          <section id="s3"><h3>S3 Objects</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">r</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>myobj <- structure(1, class = "myclass")
+print.myclass <- function(x) cat("val:", x, "\n")</code></pre></div><p>R's simplest OO system.</p></section>
+          <section id="parallel"><h3>Parallel</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">r</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>library(parallel)
+mclapply(1:4, function(x) x^2, mc.cores = 2)</code></pre></div><p>Parallelize computations.</p></section>
+          <section id="shiny"><h3>Shiny</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">r</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>library(shiny)
+ui <- fluidPage("Hello")
+server <- function(input, output) {}
+shinyApp(ui, server)</code></pre></div><p>Build interactive web apps.</p></section>
+        </section>
+
+        <section id="next"><h2>What's Next?</h2><ul><li>Build a tiny project: <em>Calculator</em>, <em>To-Do App</em>, <em>Weather Widget</em></li><li>Read the official docs and a good book</li><li>Solve <a href="https://exercism.org" target="_blank" rel="noopener">Exercism</a> exercises</li><li>Join a community &amp; share your code</li></ul><p class="callout play"><span class="ico" aria-hidden="true">🎮</span>Practice daily for 20 minutes. Consistency &gt; intensity.</p></section>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom"><p>© <span id="year"></span> CodeHub. Free for everyone.</p></div></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

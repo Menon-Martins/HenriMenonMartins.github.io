@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn Java from zero. Free tutorial with Beginner, Intermediate, and Advanced levels." />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>Java Tutorial — CodeHub</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container nav"><a class="brand" href="../index.html" aria-label="CodeHub home"><span class="logo" aria-hidden="true"></></span><span>CodeHub</span></a><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button><nav aria-label="Primary"><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../languages.html" class="active">Languages</a></li><li><a href="../index.html#start">Start Here</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></nav><button class="theme-toggle" aria-label="Switch to dark mode">🌙</button></div></header>
+  <main id="main">
+    <nav class="breadcrumb container" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="../languages.html">Languages</a><span>›</span><span aria-current="page">Java</span></nav>
+    <div class="container tutorial-layout">
+      <aside class="toc" aria-label="Table of contents"><h4>Contents</h4><ul><li><a href="#what">What is Java?</a></li><li><a href="#setup">Run Online (No Install)</a></li><li><a href="#beginner">Beginner</a></li><li><a href="#intermediate">Intermediate</a></li><li><a href="#advanced">Advanced</a></li><li><a href="#next">What's Next?</a></li></ul></aside>
+      <article class="lesson">
+        <h1>☕ Java — Learn From Zero</h1>
+        <p class="callout play"><span class="ico" aria-hidden="true">🎮</span><strong>Playground:</strong> <a href="https://replit.com/languages/java" target="_blank" rel="noopener">Replit Java</a> | <a href="https://www.jdoodle.com" target="_blank" rel="noopener">JDoodle</a> — click, type, run.</p>
+
+        <section id="what"><h2>What is Java?</h2><p>Java is a <strong>statically-typed, object-oriented</strong> language that runs on the JVM. Write once, run anywhere. Used in enterprise, Android, and big systems.</p><ul><li>Android apps</li><li>Enterprise backends (Spring)</li><li>Big data (Hadoop, Spark)</li><li>Cross-platform tools</li></ul></section>
+
+        <section id="setup"><h2>Run Online — No Install</h2><p>Use the playground links above.</p></section>
+
+        <!-- LEVEL TABS -->
+        <div class="level-tabs" role="tablist" aria-label="Difficulty level">
+          <button class="level-tab" role="tab" aria-selected="true" data-level="beginner" id="tab-beginner">🟢 Beginner</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="intermediate" id="tab-intermediate">🟡 Intermediate</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="advanced" id="tab-advanced">🔴 Advanced</button>
+        </div>
+
+        <!-- BEGINNER PANEL -->
+        <section id="beginner" class="level-panel" data-level="beginner" role="tabpanel" aria-labelledby="tab-beginner">
+          <h2>🟢 Beginner — Core Basics</h2>
+          <section id="hello"><h3>Your First Program</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">java</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>public class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello, world!");
+  }
+}</code></pre></div><p>Execution starts in <code>main</code>.</p></section>
+          <section id="vars"><h3>Variables & Types</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">java</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>int age = 36;
+double height = 1.78;
+boolean isStudent = true;
+String name = "Ada";</code></pre></div><p>Types are explicit: <code>int</code>, <code>double</code>, <code>boolean</code>, <code>String</code>.</p></section>
+          <section id="control"><h3>If / Else</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">java</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>int age = 18;
+if (age >= 18) System.out.println("Vote");
+else System.out.println("Too young");</code></pre></div><p>Curly braces group statements.</p></section>
+          <section id="loops"><h3>Loops</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">java</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>for (int i = 0; i < 5; i++) System.out.println(i);
+int n = 3;
+while (n-- > 0) System.out.println(n);</code></pre></div><p>Same loop styles as C-style languages.</p></section>
+          <section id="functions"><h3>Methods</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">java</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>static int add(int a, int b) {
+  return a + b;
+}</code></pre></div><p>Functions inside classes are called methods.</p></section>
+          <section id="arrays"><h3>Arrays & Lists</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">java</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>String[] fruits = {"apple", "banana"};
+java.util.List<String> list = new java.util.ArrayList<>();</code></pre></div><p>Prefer <code>List</code> over raw arrays.</p></section>
+        </section>
+
+        <!-- INTERMEDIATE PANEL -->
+        <section id="intermediate" class="level-panel" data-level="intermediate" role="tabpanel" aria-labelledby="tab-intermediate">
+          <h2>🟡 Intermediate — Building Real Programs</h2>
+          <section id="classes"><h3>Classes & Objects</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">java</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>class Person {
+  String name;
+  Person(String n) { name = n; }
+}</code></pre></div><p>Encapsulate data in classes.</p></section>
+          <section id="oop"><h3>OOP Principles</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">java</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>interface Animal { void speak(); }
+class Dog implements Animal {
+  public void speak() { System.out.println("Woof"); }
+}</code></pre></div><p>Use <code>interface</code> and <code>implements</code>.</p></section>
+          <section id="exceptions"><h3>Exceptions</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">java</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>try {
+  int x = 1 / 0;
+} catch (ArithmeticException e) {
+  System.out.println("No divide by zero");
+}</code></pre></div><p>Catch errors with <code>try/catch</code>.</p></section>
+          <section id="collections"><h3>Collections</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">java</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>java.util.Map<String, Integer> m = new java.util.HashMap<>();
+m.put("Ada", 36);</code></pre></div><p>Use <code>Map</code>, <code>Set</code>, <code>List</code>.</p></section>
+          <section id="streams"><h3>Streams</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">java</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>List<Integer> nums = List.of(1,2,3,4);
+long even = nums.stream().filter(n -> n % 2 == 0).count();</code></pre></div><p>Functional pipelines with streams.</p></section>
+        </section>
+
+        <!-- ADVANCED PANEL -->
+        <section id="advanced" class="level-panel" data-level="advanced" role="tabpanel" aria-labelledby="tab-advanced">
+          <h2>🔴 Advanced — Pro Concepts</h2>
+          <section id="generics"><h3>Generics</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">java</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>class Box<T> {
+  T value;
+  Box(T v) { value = v; }
+}</code></pre></div><p>Parameterize types safely.</p></section>
+          <section id="lambda"><h3>Lambdas</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">java</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>Runnable r = () -> System.out.println("Hi");
+new Thread(r).start();</code></pre></div><p>Lambdas are anonymous functions.</p></section>
+          <section id="records"><h3>Records (Java 16+)</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">java</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>record Point(int x, int y) {}
+Point p = new Point(1, 2);</code></pre></div><p>Compact immutable data classes.</p></section>
+          <section id="concurrency"><h3>Concurrency</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">java</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>ExecutorService ex = Executors.newFixedThreadPool(2);
+ex.submit(() -> System.out.println("Task"));</code></pre></div><p>Use executors, not raw threads.</p></section>
+        </section>
+
+        <section id="next"><h2>What's Next?</h2><ul><li>Build a tiny project: <em>Calculator</em>, <em>To-Do App</em>, <em>Weather Widget</em></li><li>Read the official docs and a good book</li><li>Solve <a href="https://exercism.org" target="_blank" rel="noopener">Exercism</a> exercises</li><li>Join a community &amp; share your code</li></ul><p class="callout play"><span class="ico" aria-hidden="true">🎮</span>Practice daily for 20 minutes. Consistency &gt; intensity.</p></section>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom"><p>© <span id="year"></span> CodeHub. Free for everyone.</p></div></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

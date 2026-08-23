@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn C++ from zero. Free tutorial with Beginner, Intermediate, and Advanced levels." />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>C++ Tutorial — CodeHub</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container nav"><a class="brand" href="../index.html" aria-label="CodeHub home"><span class="logo" aria-hidden="true"></></span><span>CodeHub</span></a><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button><nav aria-label="Primary"><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../languages.html" class="active">Languages</a></li><li><a href="../index.html#start">Start Here</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></nav><button class="theme-toggle" aria-label="Switch to dark mode">🌙</button></div></header>
+  <main id="main">
+    <nav class="breadcrumb container" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="../languages.html">Languages</a><span>›</span><span aria-current="page">C++</span></nav>
+    <div class="container tutorial-layout">
+      <aside class="toc" aria-label="Table of contents"><h4>Contents</h4><ul><li><a href="#what">What is C++?</a></li><li><a href="#setup">Run Online (No Install)</a></li><li><a href="#beginner">Beginner</a></li><li><a href="#intermediate">Intermediate</a></li><li><a href="#advanced">Advanced</a></li><li><a href="#next">What's Next?</a></li></ul></aside>
+      <article class="lesson">
+        <h1>🛡 C++ — Learn From Zero</h1>
+        <p class="callout play"><span class="ico" aria-hidden="true">🎮</span><strong>Playground:</strong> <a href="https://replit.com/languages/cpp" target="_blank" rel="noopener">Replit C++</a> | <a href="https://www.jdoodle.com" target="_blank" rel="noopener">JDoodle</a> — click, type, run.</p>
+
+        <section id="what"><h2>What is C++?</h2><p>C++ adds <strong>classes, templates, and STL</strong> on top of C. It's used where speed and control matter: games, finance, robotics.</p><ul><li>Game engines (Unreal)</li><li>High-frequency trading</li><li>Operating systems &amp; browsers</li><li>Embedded systems</li></ul></section>
+
+        <section id="setup"><h2>Run Online — No Install</h2><p>Use the playground links above.</p></section>
+
+        <!-- LEVEL TABS -->
+        <div class="level-tabs" role="tablist" aria-label="Difficulty level">
+          <button class="level-tab" role="tab" aria-selected="true" data-level="beginner" id="tab-beginner">🟢 Beginner</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="intermediate" id="tab-intermediate">🟡 Intermediate</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="advanced" id="tab-advanced">🔴 Advanced</button>
+        </div>
+
+        <!-- BEGINNER PANEL -->
+        <section id="beginner" class="level-panel" data-level="beginner" role="tabpanel" aria-labelledby="tab-beginner">
+          <h2>🟢 Beginner — Core Basics</h2>
+          <section id="hello"><h3>Your First Program</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">cpp</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>#include <iostream>
+int main() {
+  std::cout << "Hello, world!" << std::endl;
+  return 0;
+}</code></pre></div><p>Use <code>std::cout</code> for output.</p></section>
+          <section id="vars"><h3>Variables & Types</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">cpp</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>int age = 36;
+double height = 1.78;
+bool isStudent = true;
+std::string name = "Ada";</code></pre></div><p>C++ adds <code>std::string</code> and <code>bool</code>.</p></section>
+          <section id="control"><h3>If / Else</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">cpp</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>int age = 18;
+if (age >= 18) std::cout << "Vote\n";
+else std::cout << "Too young\n";</code></pre></div><p>Same control flow as C.</p></section>
+          <section id="loops"><h3>Loops</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">cpp</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>for (int i = 0; i < 5; i++) std::cout << i << "\n";</code></pre></div><p>Range-based: <code>for (auto x : vec)</code>.</p></section>
+          <section id="functions"><h3>Functions</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">cpp</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>int add(int a, int b) {
+  return a + b;
+}</code></pre></div><p>Overloading allowed by signature.</p></section>
+          <section id="classes"><h3>Classes</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">cpp</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>class Person {
+public:
+  std::string name;
+  int age;
+};</code></pre></div><p>Encapsulate with <code>public</code>/<code>private</code>.</p></section>
+        </section>
+
+        <!-- INTERMEDIATE PANEL -->
+        <section id="intermediate" class="level-panel" data-level="intermediate" role="tabpanel" aria-labelledby="tab-intermediate">
+          <h2>🟡 Intermediate — Building Real Programs</h2>
+          <section id="stl"><h3>STL Containers</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">cpp</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>#include <vector>
+std::vector<int> v = {1, 2, 3};
+v.push_back(4);</code></pre></div><p>Use <code>vector</code>, <code>map</code>, <code>set</code>.</p></section>
+          <section id="templates"><h3>Templates</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">cpp</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>template<typename T>
+T max(T a, T b) { return a > b ? a : b; }</code></pre></div><p>Build generic code.</p></section>
+          <section id="refs"><h3>References</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">cpp</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>int x = 5;
+int &r = x;
+r = 10;
+// x is now 10</code></pre></div><p>References are aliases, safer than pointers.</p></section>
+          <section id="raii"><h3>RAII</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">cpp</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>{
+  std::vector<int> v(1000);
+} // automatically freed</code></pre></div><p>Resources freed by destructors.</p></section>
+          <section id="oop"><h3>Inheritance</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">cpp</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>class Animal { public: virtual void speak() = 0; };
+class Dog : public Animal { void speak() override {} };</code></pre></div><p>Polymorphism via virtual methods.</p></section>
+        </section>
+
+        <!-- ADVANCED PANEL -->
+        <section id="advanced" class="level-panel" data-level="advanced" role="tabpanel" aria-labelledby="tab-advanced">
+          <h2>🔴 Advanced — Pro Concepts</h2>
+          <section id="lambdas"><h3>Lambdas</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">cpp</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>auto sum = [](int a, int b) { return a + b; };
+std::cout << sum(2, 3);</code></pre></div><p>Inline anonymous functions.</p></section>
+          <section id="smartptr"><h3>Smart Pointers</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">cpp</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>#include <memory>
+auto p = std::make_unique<int>(5);</code></pre></div><p>Automatic memory management.</p></section>
+          <section id="move"><h3>Move Semantics</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">cpp</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>std::vector<int> a = {1,2,3};
+std::vector<int> b = std::move(a);</code></pre></div><p>Avoid costly copies.</p></section>
+          <section id="concurrency"><h3>Concurrency</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">cpp</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>#include <thread>
+std::thread t([](){ /* work */ });
+t.join();</code></pre></div><p>Spawn threads with <code>std::thread</code>.</p></section>
+        </section>
+
+        <section id="next"><h2>What's Next?</h2><ul><li>Build a tiny project: <em>Calculator</em>, <em>To-Do App</em>, <em>Weather Widget</em></li><li>Read the official docs and a good book</li><li>Solve <a href="https://exercism.org" target="_blank" rel="noopener">Exercism</a> exercises</li><li>Join a community &amp; share your code</li></ul><p class="callout play"><span class="ico" aria-hidden="true">🎮</span>Practice daily for 20 minutes. Consistency &gt; intensity.</p></section>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom"><p>© <span id="year"></span> CodeHub. Free for everyone.</p></div></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

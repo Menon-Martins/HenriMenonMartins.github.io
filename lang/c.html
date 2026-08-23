@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn C from zero. Free tutorial with Beginner, Intermediate, and Advanced levels." />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>C Tutorial — CodeHub</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container nav"><a class="brand" href="../index.html" aria-label="CodeHub home"><span class="logo" aria-hidden="true"></></span><span>CodeHub</span></a><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button><nav aria-label="Primary"><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../languages.html" class="active">Languages</a></li><li><a href="../index.html#start">Start Here</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></nav><button class="theme-toggle" aria-label="Switch to dark mode">🌙</button></div></header>
+  <main id="main">
+    <nav class="breadcrumb container" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="../languages.html">Languages</a><span>›</span><span aria-current="page">C</span></nav>
+    <div class="container tutorial-layout">
+      <aside class="toc" aria-label="Table of contents"><h4>Contents</h4><ul><li><a href="#what">What is C?</a></li><li><a href="#setup">Run Online (No Install)</a></li><li><a href="#beginner">Beginner</a></li><li><a href="#intermediate">Intermediate</a></li><li><a href="#advanced">Advanced</a></li><li><a href="#next">What's Next?</a></li></ul></aside>
+      <article class="lesson">
+        <h1>🍚 C — Learn From Zero</h1>
+        <p class="callout play"><span class="ico" aria-hidden="true">🎮</span><strong>Playground:</strong> <a href="https://replit.com/languages/c" target="_blank" rel="noopener">Replit C</a> | <a href="https://www.jdoodle.com" target="_blank" rel="noopener">JDoodle</a> — click, type, run.</p>
+
+        <section id="what"><h2>What is C?</h2><p>C is a <strong>low-level, fast</strong> systems language. It powers operating systems, embedded devices, and is the foundation of many modern languages.</p><ul><li>Operating systems (Linux, Windows kernels)</li><li>Embedded &amp; IoT</li><li>Game engines &amp; drivers</li><li>Performance-critical code</li></ul></section>
+
+        <section id="setup"><h2>Run Online — No Install</h2><p>Use the playground links above.</p></section>
+
+        <!-- LEVEL TABS -->
+        <div class="level-tabs" role="tablist" aria-label="Difficulty level">
+          <button class="level-tab" role="tab" aria-selected="true" data-level="beginner" id="tab-beginner">🟢 Beginner</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="intermediate" id="tab-intermediate">🟡 Intermediate</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="advanced" id="tab-advanced">🔴 Advanced</button>
+        </div>
+
+        <!-- BEGINNER PANEL -->
+        <section id="beginner" class="level-panel" data-level="beginner" role="tabpanel" aria-labelledby="tab-beginner">
+          <h2>🟢 Beginner — Core Basics</h2>
+          <section id="hello"><h3>Your First Program</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">c</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>#include <stdio.h>
+int main() {
+  printf("Hello, world!\n");
+  return 0;
+}</code></pre></div><p>Programs start in <code>main()</code>.</p></section>
+          <section id="vars"><h3>Variables & Types</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">c</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>int age = 36;
+float height = 1.78f;
+double big = 3.14;
+char c = 'A';</code></pre></div><p>Static types: <code>int</code>, <code>float</code>, <code>char</code>.</p></section>
+          <section id="control"><h3>If / Else</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">c</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>int age = 18;
+if (age >= 18) printf("Vote\n");
+else printf("Too young\n");</code></pre></div><p>No <code>bool</code> keyword in C89; use 0/1.</p></section>
+          <section id="loops"><h3>Loops</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">c</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>for (int i = 0; i < 5; i++) printf("%d\n", i);
+int n = 3;
+while (n-- > 0) printf("%d\n", n);</code></pre></div><p>Classic C-style loops.</p></section>
+          <section id="functions"><h3>Functions</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">c</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>int add(int a, int b) {
+  return a + b;
+}</code></pre></div><p>Declare before use or provide a prototype.</p></section>
+          <section id="pointers"><h3>Pointers Intro</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">c</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>int x = 10;
+int *p = &x;
+printf("%d\n", *p);</code></pre></div><p><code>&amp;</code> gets address, <code>*</code> dereferences.</p></section>
+        </section>
+
+        <!-- INTERMEDIATE PANEL -->
+        <section id="intermediate" class="level-panel" data-level="intermediate" role="tabpanel" aria-labelledby="tab-intermediate">
+          <h2>🟡 Intermediate — Building Real Programs</h2>
+          <section id="arrays"><h3>Arrays</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">c</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>int nums[5] = {1, 2, 3, 4, 5};
+for (int i = 0; i < 5; i++) printf("%d\n", nums[i]);</code></pre></div><p>Arrays decay to pointers when passed.</p></section>
+          <section id="strings"><h3>Strings</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">c</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>char name[] = "Ada";
+printf("%s\n", name);</code></pre></div><p>Strings are <code>char</code> arrays ending in <code>\0</code>.</p></section>
+          <section id="structs"><h3>Structs</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">c</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>struct Person { char name[20]; int age; };
+struct Person p = {"Ada", 36};</code></pre></div><p>Group related data in structs.</p></section>
+          <section id="memory"><h3>Dynamic Memory</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">c</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>int *arr = malloc(5 * sizeof(int));
+arr[0] = 1;
+free(arr);</code></pre></div><p>Always <code>free()</code> what you <code>malloc()</code>.</p></section>
+          <section id="fileio"><h3>File I/O</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">c</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>FILE *f = fopen("a.txt", "w");
+fprintf(f, "Hi");
+fclose(f);</code></pre></div><p>Use <code>fopen</code>/<code>fclose</code>.</p></section>
+        </section>
+
+        <!-- ADVANCED PANEL -->
+        <section id="advanced" class="level-panel" data-level="advanced" role="tabpanel" aria-labelledby="tab-advanced">
+          <h2>🔴 Advanced — Pro Concepts</h2>
+          <section id="funcptr"><h3>Function Pointers</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">c</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>int (*op)(int,int) = add;
+printf("%d\n", op(2,3));</code></pre></div><p>Pointers to functions enable callbacks.</p></section>
+          <section id="preproc"><h3>Preprocessor</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">c</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>#define MAX 100
+#ifdef DEBUG
+  printf("debug\n");
+#endif</code></pre></div><p>Macros and conditional compilation.</p></section>
+          <section id="bitwise"><h3>Bitwise Ops</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">c</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>int flags = 1 | 4;
+if (flags & 1) printf("bit0\n");</code></pre></div><p>Manipulate individual bits.</p></section>
+          <section id="union"><h3>Unions</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">c</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>union Data { int i; float f; };
+union Data d; d.i = 10;</code></pre></div><p>Share memory between members.</p></section>
+        </section>
+
+        <section id="next"><h2>What's Next?</h2><ul><li>Build a tiny project: <em>Calculator</em>, <em>To-Do App</em>, <em>Weather Widget</em></li><li>Read the official docs and a good book</li><li>Solve <a href="https://exercism.org" target="_blank" rel="noopener">Exercism</a> exercises</li><li>Join a community &amp; share your code</li></ul><p class="callout play"><span class="ico" aria-hidden="true">🎮</span>Practice daily for 20 minutes. Consistency &gt; intensity.</p></section>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom"><p>© <span id="year"></span> CodeHub. Free for everyone.</p></div></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

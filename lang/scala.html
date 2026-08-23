@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn Scala from zero. Free tutorial with Beginner, Intermediate, and Advanced levels." />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>Scala Tutorial — CodeHub</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container nav"><a class="brand" href="../index.html" aria-label="CodeHub home"><span class="logo" aria-hidden="true"></></span><span>CodeHub</span></a><button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button><nav aria-label="Primary"><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../languages.html" class="active">Languages</a></li><li><a href="../index.html#start">Start Here</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></nav><button class="theme-toggle" aria-label="Switch to dark mode">🌙</button></div></header>
+  <main id="main">
+    <nav class="breadcrumb container" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="../languages.html">Languages</a><span>›</span><span aria-current="page">Scala</span></nav>
+    <div class="container tutorial-layout">
+      <aside class="toc" aria-label="Table of contents"><h4>Contents</h4><ul><li><a href="#what">What is Scala?</a></li><li><a href="#setup">Run Online (No Install)</a></li><li><a href="#beginner">Beginner</a></li><li><a href="#intermediate">Intermediate</a></li><li><a href="#advanced">Advanced</a></li><li><a href="#next">What's Next?</a></li></ul></aside>
+      <article class="lesson">
+        <h1>⚛ Scala — Learn From Zero</h1>
+        <p class="callout play"><span class="ico" aria-hidden="true">🎮</span><strong>Playground:</strong> <a href="https://scastie.scala-lang.org" target="_blank" rel="noopener">Scastie</a> — click, type, run.</p>
+
+        <section id="what"><h2>What is Scala?</h2><p>Scala blends <strong>object-oriented and functional</strong> programming on the JVM. Great for data engineering (Spark) and scalable backends.</p><ul><li>Big data (Apache Spark)</li><li>Backend services (Play, Akka)</li><li>Distributed systems</li><li>Functional pipelines</li></ul></section>
+
+        <section id="setup"><h2>Run Online — No Install</h2><p>Use the playground links above.</p></section>
+
+        <!-- LEVEL TABS -->
+        <div class="level-tabs" role="tablist" aria-label="Difficulty level">
+          <button class="level-tab" role="tab" aria-selected="true" data-level="beginner" id="tab-beginner">🟢 Beginner</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="intermediate" id="tab-intermediate">🟡 Intermediate</button>
+          <button class="level-tab" role="tab" aria-selected="false" data-level="advanced" id="tab-advanced">🔴 Advanced</button>
+        </div>
+
+        <!-- BEGINNER PANEL -->
+        <section id="beginner" class="level-panel" data-level="beginner" role="tabpanel" aria-labelledby="tab-beginner">
+          <h2>🟢 Beginner — Core Basics</h2>
+          <section id="hello"><h3>Your First Program</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">scala</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>object Main {
+  def main(args: Array[String]): Unit =
+    println("Hello, world!")
+}</code></pre></div><p>Programs live in <code>object</code>s.</p></section>
+          <section id="vars"><h3>Variables</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">scala</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>val name = "Ada"
+var age = 36</code></pre></div><p>Prefer <code>val</code>.</p></section>
+          <section id="control"><h3>If / Else</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">scala</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>val age = 18
+val msg = if (age >= 18) "Vote" else "Too young"</code></pre></div><p>If is an expression.</p></section>
+          <section id="loops"><h3>Loops</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">scala</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>for (i <- 0 until 5) println(i)
+(1 to 3).foreach(println)</code></pre></div><p>Use <code>until</code> / <code>to</code>.</p></section>
+          <section id="functions"><h3>Functions</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">scala</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>def add(a: Int, b: Int): Int = a + b</code></pre></div><p>Types after parameter names.</p></section>
+          <section id="collections"><h3>Collections</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">scala</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>val nums = List(1, 2, 3)
+val even = nums.filter(_ % 2 == 0)</code></pre></div><p>Immutable by default.</p></section>
+        </section>
+
+        <!-- INTERMEDIATE PANEL -->
+        <section id="intermediate" class="level-panel" data-level="intermediate" role="tabpanel" aria-labelledby="tab-intermediate">
+          <h2>🟡 Intermediate — Building Real Programs</h2>
+          <section id="caseclass"><h3>Case Classes</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">scala</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>case class Person(name: String, age: Int)
+val p = Person("Ada", 36)</code></pre></div><p>Automatic equality, copy, match.</p></section>
+          <section id="pattern"><h3>Pattern Matching</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">scala</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>x match {
+  case 0 => "zero"
+  case n if n > 0 => "pos"
+  case _ => "neg"
+}</code></pre></div><p>Exhaustive, powerful matching.</p></section>
+          <section id="traits"><h3>Traits</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">scala</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>trait Animal { def speak(): Unit }
+class Dog extends Animal { def speak() = () }</code></pre></div><p>Interfaces with implementations.</p></section>
+          <section id="higher"><h3>Higher-Order Functions</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">scala</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>val apply = (f: Int => Int, x: Int) => f(x)</code></pre></div><p>Functions as values.</p></section>
+          <section id="options"><h3>Option</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">scala</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>val o: Option[Int] = Some(5)
+val v = o.getOrElse(0)</code></pre></div><p>No nulls; use <code>Option</code>.</p></section>
+        </section>
+
+        <!-- ADVANCED PANEL -->
+        <section id="advanced" class="level-panel" data-level="advanced" role="tabpanel" aria-labelledby="tab-advanced">
+          <h2>🔴 Advanced — Pro Concepts</h2>
+          <section id="implicits"><h3>Implicits</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">scala</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>implicit val ord: Ordering[Int] = Ordering[Int]
+List(3,1,2).sorted</code></pre></div><p>Type-class style resolution.</p></section>
+          <section id="futures"><h3>Futures</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">scala</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>import scala.concurrent.Future
+Future { expensiveWork() }</code></pre></div><p>Async computations.</p></section>
+          <section id="forcomp"><h3>For-Comprehensions</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">scala</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>for {
+  a <- optA
+  b <- optB
+} yield a + b</code></pre></div><p>Chain monadic operations.</p></section>
+          <section id="macros"><h3>Macros</h3><div class="codeblock"><div class="cb-head"><span class="cb-lang">scala</span><button class="copy-btn" aria-label="Copy code">Copy</button></div><pre><code>import scala.quoted.*
+inline def twice(n: Int): Int = ${ }</code></pre></div><p>Compile-time metaprogramming.</p></section>
+        </section>
+
+        <section id="next"><h2>What's Next?</h2><ul><li>Build a tiny project: <em>Calculator</em>, <em>To-Do App</em>, <em>Weather Widget</em></li><li>Read the official docs and a good book</li><li>Solve <a href="https://exercism.org" target="_blank" rel="noopener">Exercism</a> exercises</li><li>Join a community &amp; share your code</li></ul><p class="callout play"><span class="ico" aria-hidden="true">🎮</span>Practice daily for 20 minutes. Consistency &gt; intensity.</p></section>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom"><p>© <span id="year"></span> CodeHub. Free for everyone.</p></div></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Rotina Leve com Família Grande</title>
-  <style>
-@font-face {
-  font-family: 'DejaVu Serif';
-  src: local('DejaVu Serif');
-}
-@font-face {
-  font-family: 'DejaVu Sans';
-  src: local('DejaVu Sans');
-}
-
+<meta charset="UTF-8" />
+<title>Rotina Leve com Família Grande</title>
+<style>
 :root {
-  --sage: #3f6f63;
-  --sage-deep: #2f564c;
-  --sage-soft: #dceae4;
-  --peach: #e8a090;
-  --peach-soft: #f7e3dc;
-  --ink: #24302c;
-  --muted: #5b6b64;
-  --paper: #f7faf8;
+  --ink: #1f2430;
+  --muted: #5a6472;
+  --paper: #fffdf9;
   --white: #ffffff;
-  --line: #c9ddd4;
-  --sand: #eef5f1;
+  --coral: #ff6b57;
+  --coral-soft: #ffe3de;
+  --teal: #0f8f8a;
+  --teal-deep: #0a6e6a;
+  --teal-soft: #d8f3f1;
+  --sun: #ffc857;
+  --sun-soft: #fff3d6;
+  --berry: #c44569;
+  --berry-soft: #f8dce5;
+  --sky: #3d8bfd;
+  --line: #eadfd6;
 }
 
 @page {
   size: A4;
-  margin: 16mm 14mm 16mm 14mm;
+  margin: 14mm 12mm 16mm 12mm;
   @bottom-center {
     content: counter(page);
-    font-family: 'DejaVu Sans', sans-serif;
+    font-family: "DejaVu Sans", sans-serif;
     font-size: 9pt;
-    color: #5b6b64;
+    color: #5a6472;
   }
 }
 @page :first {
@@ -43,412 +38,555 @@
 }
 
 * { box-sizing: border-box; }
-
 html, body {
-  margin: 0;
-  padding: 0;
-  color: var(--ink);
+  margin: 0; padding: 0;
   background: var(--paper);
-  font-family: 'DejaVu Sans', sans-serif;
-  font-size: 10.8pt;
-  line-height: 1.5;
+  color: var(--ink);
+  font-family: "DejaVu Sans", sans-serif;
+  font-size: 11.5pt;
+  line-height: 1.62;
 }
+img { max-width: 100%; display: block; }
+p { margin: 0 0 11px; }
+strong { color: var(--teal-deep); }
+h1,h2,h3,h4 {
+  font-family: "DejaVu Serif", serif;
+  line-height: 1.22;
+  break-after: avoid;
+  color: var(--teal-deep);
+}
+h2 { font-size: 18pt; margin: 18px 0 10px; }
+h3 { font-size: 14pt; margin: 16px 0 8px; }
+h4 { font-size: 12pt; margin: 12px 0 6px; color: var(--coral); }
 
-img { max-width: 100%; }
-
+/* COVER */
 .cover {
   break-after: page;
-  width: 210mm;
-  height: 297mm;
-  margin: 0;
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(165deg, #2f564c 0%, #3f6f63 45%, #6d9a8c 78%, #e8a090 100%);
+  width: 210mm; height: 297mm;
+  position: relative; overflow: hidden;
+  background: #ff6b57;
 }
-
-.cover-image {
-  position: absolute;
-  inset: 0;
-  width: 210mm;
-  height: 297mm;
+.cover img.bg {
+  position: absolute; top: 0; left: 0; right: 0;
+  width: 210mm; height: 185mm;
   object-fit: cover;
-  opacity: 0.9;
 }
-
-.cover-veil {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(36,48,44,0.12) 0%, rgba(36,48,44,0.28) 45%, rgba(36,48,44,0.82) 100%);
+.cover .veil {
+  position: absolute; top: 0; left: 0; right: 0; height: 185mm;
+  background: linear-gradient(180deg, rgba(255,107,87,0.15) 0%, rgba(15,143,138,0.2) 60%, rgba(31,36,48,0.35) 100%);
 }
-
-.cover-content {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  z-index: 2;
-  padding: 28mm 18mm 24mm;
+.cover .copy {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 125mm;
+  padding: 14mm 15mm 16mm;
   color: white;
+  background: linear-gradient(135deg, #0a6e6a 0%, #0f8f8a 40%, #3d8bfd 78%, #c44569 100%);
 }
-
-.cover-badge {
+.cover .accent-bar {
+  position: absolute; left: 0; right: 0; top: 182mm;
+  height: 10px;
+  background: linear-gradient(90deg, #ff6b57, #ffc857, #0f8f8a, #3d8bfd);
+}
+.pill {
   display: inline-block;
-  background: rgba(255,255,255,0.18);
-  border: 1px solid rgba(255,255,255,0.35);
-  padding: 8px 14px;
+  background: var(--sun);
+  color: #1f2430;
   font-size: 9pt;
-  letter-spacing: 0.06em;
+  font-weight: 700;
+  letter-spacing: .06em;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  padding: 8px 14px;
+  margin-bottom: 12px;
 }
-
 .cover h1 {
-  font-family: 'DejaVu Serif', serif;
-  font-size: 32pt;
-  line-height: 1.1;
-  margin: 0 0 12px;
+  color: white;
+  font-size: 30pt;
+  margin: 0 0 10px;
   max-width: 12ch;
 }
-
-.cover .subtitle {
-  font-size: 12pt;
+.cover .sub {
+  font-size: 12.5pt;
   line-height: 1.45;
   max-width: 36ch;
-  margin: 0 0 18px;
-  color: rgba(255,255,255,0.95);
+  margin: 0 0 14px;
+  color: #fff8f2;
 }
-
-.cover-meta {
-  font-size: 10pt;
-  opacity: 0.92;
-  border-top: 1px solid rgba(255,255,255,0.35);
+.cover .meta {
+  border-top: 3px solid var(--sun);
   padding-top: 12px;
+  font-size: 11pt;
   max-width: 42ch;
+  color: rgba(255,255,255,.96);
 }
 
-.page-pad { padding: 0 2mm; }
-
-h1, h2, h3, h4 {
-  font-family: 'DejaVu Serif', serif;
-  color: var(--sage-deep);
-  line-height: 1.25;
-  break-after: avoid;
-}
-
-h2 { font-size: 16pt; margin: 18px 0 8px; }
-h3 { font-size: 12.5pt; margin: 14px 0 6px; }
-h4 { font-size: 11pt; margin: 12px 0 5px; color: var(--sage); }
-
-p { margin: 0 0 8px; }
-strong { color: var(--sage-deep); }
-ul, ol { margin: 0 0 10px; padding-left: 1.15em; }
-li { margin-bottom: 4px; }
-
-.soft-rule {
-  border: none;
-  border-top: 1px solid var(--line);
-  margin: 14px 0;
-}
-
-.intro-card {
-  background: linear-gradient(135deg, var(--sage-soft), var(--peach-soft));
-  padding: 16px 16px 8px;
-  margin: 0 0 14px;
-  border-left: 5px solid var(--sage);
-}
-.intro-card h2 { margin-top: 0; }
-
-.toc-section { break-before: page; }
-.toc-grid { margin-top: 10px; }
-.toc-item {
-  display: table;
-  width: 100%;
-  background: var(--sand);
-  border: 1px solid var(--line);
-  padding: 10px 12px;
-  margin: 0 0 10px;
-}
-.toc-num {
-  display: table-cell;
-  width: 40px;
-  vertical-align: top;
-}
-.toc-num span {
-  display: inline-block;
-  width: 34px;
-  height: 34px;
-  line-height: 34px;
-  text-align: center;
-  border-radius: 50%;
-  background: var(--sage);
-  color: white;
-  font-family: 'DejaVu Serif', serif;
-  font-weight: 700;
-  font-size: 13pt;
-}
-.toc-body { display: table-cell; vertical-align: top; padding-left: 10px; }
-.toc-body h3 { margin: 0 0 3px; font-size: 12pt; }
-.toc-body p { margin: 0; color: var(--muted); font-size: 9.5pt; }
-
-.chapter { break-before: page; }
-
-.chapter-hero {
-  position: relative;
-  margin: 0 0 14px;
-  overflow: hidden;
-  height: 200px;
-  background: var(--sage);
-}
-
-.chapter-hero img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.chapter-hero-overlay {
-  position: absolute;
-  left: 0; right: 0; bottom: 0; top: 0;
-  background: linear-gradient(100deg, rgba(36,48,44,0.82) 0%, rgba(36,48,44,0.4) 55%, rgba(36,48,44,0.18) 100%);
-  color: white;
-  padding: 16px 16px 14px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.chapter-kicker {
-  display: inline-block;
-  align-self: flex-start;
-  background: rgba(232,160,144,0.95);
-  color: #2c241f;
-  font-size: 8.5pt;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 4px 9px;
-  margin-bottom: 8px;
-  font-family: 'DejaVu Sans', sans-serif;
-}
-
-.chapter-hero h1 {
-  color: white;
-  font-size: 18pt;
-  margin: 0 0 4px;
-}
-.chapter-sub {
-  margin: 0;
-  color: rgba(255,255,255,0.93);
-  font-size: 10pt;
-  max-width: 52ch;
-  font-family: 'DejaVu Sans', sans-serif;
-}
-
-.section-banner {
-  background: linear-gradient(120deg, var(--sage-deep), var(--sage));
+/* INTRO */
+.intro-wrap { }
+.intro-banner {
+  background: linear-gradient(120deg, #0f8f8a, #3d8bfd 55%, #c44569);
   color: white;
   padding: 18px 16px;
   margin: 0 0 14px;
 }
-.section-banner h1 { color: white; margin: 4px 0 0; font-size: 18pt; }
-.section-banner .chapter-sub { color: rgba(255,255,255,0.92); }
-
-.pain-title { color: var(--sage-deep); }
-.checklist-title { color: var(--sage); }
-.action-title {
-  background: var(--peach-soft);
+.intro-banner h2 { color: white; margin: 0; font-size: 22pt; }
+.intro-banner p { margin: 6px 0 0; color: rgba(255,255,255,.95); font-size: 11pt; }
+.lead {
+  font-size: 13.5pt;
+  background: var(--coral-soft);
+  border-left: 8px solid var(--coral);
+  padding: 14px 16px;
+  margin: 0 0 14px;
+  line-height: 1.55;
+}
+.highlight-box {
+  background: linear-gradient(135deg, #fff3d6, #ffe3de);
+  border: 3px solid var(--coral);
+  padding: 14px 16px;
+  margin: 14px 0;
+}
+.highlight-box p { margin: 0; font-size: 12.5pt; }
+.promise {
+  display: table;
+  width: 100%;
+  margin: 12px 0 16px;
+  background: var(--teal-soft);
+  border: 2px solid var(--teal);
+}
+.promise .cell {
+  display: table-cell;
+  width: 25%;
+  padding: 12px 10px;
+  vertical-align: top;
+  border-right: 1px solid rgba(15,143,138,.25);
+}
+.promise .cell:last-child { border-right: none; }
+.promise .n {
   display: inline-block;
-  padding: 5px 10px;
-  border-left: 4px solid var(--peach);
+  background: var(--teal);
+  color: white;
+  font-weight: 700;
+  font-size: 10pt;
+  padding: 3px 8px;
+  margin-bottom: 6px;
 }
+.promise p { margin: 0; font-size: 10pt; color: var(--ink); }
 
-.callout {
-  background: var(--sage-soft);
-  border-left: 4px solid var(--sage);
-  padding: 9px 11px;
-  margin: 10px 0;
+/* TOC */
+.toc { break-before: page; }
+.toc h2 {
+  background: var(--sun);
+  display: inline-block;
+  padding: 8px 14px;
+  margin: 0 0 14px;
+  color: #1f2430;
 }
+.toc-card {
+  display: table;
+  width: 100%;
+  margin: 0 0 12px;
+  background: white;
+  border: 2px solid var(--line);
+  overflow: hidden;
+}
+.toc-card .thumb {
+  display: table-cell;
+  width: 42%;
+  vertical-align: top;
+}
+.toc-card .thumb img {
+  width: 100%;
+  height: 128px;
+  object-fit: cover;
+}
+.toc-card .info {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 12px 14px;
+}
+.toc-card .num {
+  display: inline-block;
+  background: var(--coral);
+  color: white;
+  font-weight: 700;
+  padding: 4px 10px;
+  font-size: 10pt;
+  margin-bottom: 6px;
+}
+.toc-card h3 { margin: 0 0 4px; font-size: 13pt; color: var(--ink); }
+.toc-card p { margin: 0; font-size: 10pt; color: var(--muted); }
 
-blockquote {
-  margin: 12px 0;
-  padding: 10px 14px;
-  background: var(--peach-soft);
-  border-left: 4px solid var(--peach);
-  font-family: 'DejaVu Serif', serif;
+/* CHAPTER */
+.chapter { break-before: page; --accent: var(--coral); }
+.hero {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  margin: 0 0 14px;
+  background: #333;
+}
+.hero img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.hero-shade {
+  position: absolute; inset: 0;
+  background: linear-gradient(100deg, rgba(20,24,32,.88) 0%, rgba(20,24,32,.45) 55%, rgba(20,24,32,.15) 100%);
+}
+.hero-copy {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 16px 16px 14px;
+  color: white;
+}
+.badge {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  margin-bottom: 8px;
+  font-family: "DejaVu Sans", sans-serif;
+}
+.hero-copy h1 {
+  color: white;
+  font-size: 20pt;
+  margin: 0 0 4px;
+}
+.hero-copy p {
+  margin: 0;
+  color: rgba(255,255,255,.95);
   font-size: 11pt;
-  color: var(--sage-deep);
+  max-width: 48ch;
+  font-family: "DejaVu Sans", sans-serif;
 }
+.chapter-body { padding: 0 1mm 2mm; }
+.chapter-body > *:last-child { margin-bottom: 0; }
+
+.eyebrow-title {
+  color: var(--coral);
+  font-size: 15pt;
+}
+.check-h {
+  background: var(--teal);
+  color: white !important;
+  display: inline-block;
+  padding: 6px 12px;
+}
+.action-h {
+  background: var(--sun);
+  color: #1f2430 !important;
+  display: inline-block;
+  padding: 6px 12px;
+}
+
+.tip {
+  background: var(--sun-soft);
+  border: 2px solid var(--sun);
+  border-left-width: 8px;
+  padding: 12px 14px;
+  margin: 12px 0;
+  font-size: 11.2pt;
+}
+.quote {
+  margin: 14px 0;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, var(--berry-soft), var(--coral-soft));
+  border-left: 8px solid var(--berry);
+  font-family: "DejaVu Serif", serif;
+  font-size: 13pt;
+  color: #4a2030;
+}
+.bullets { margin: 0 0 12px; padding-left: 1.1em; }
+.bullets li { margin-bottom: 5px; }
+.bullets li::marker { color: var(--coral); font-weight: 700; }
+.steps { margin: 0 0 12px; padding-left: 1.3em; }
+.steps li { margin-bottom: 7px; padding-left: 4px; }
+.steps li::marker { color: var(--teal); font-weight: 700; font-size: 1.05em; }
 
 .checklist {
   list-style: none;
-  padding: 10px 12px;
-  margin: 8px 0 12px;
-  background: var(--white);
-  border: 1px dashed var(--sage);
+  margin: 10px 0 14px;
+  padding: 12px 14px;
+  background: white;
+  border: 2px dashed var(--teal);
 }
 .checklist li {
   display: table;
   width: 100%;
-  margin-bottom: 6px;
+  margin: 0 0 8px;
 }
 .checklist .box {
   display: table-cell;
   width: 16px;
-  height: 14px;
-  border: 1.5px solid var(--sage);
-  background: white;
+  height: 16px;
+  border: 2px solid var(--coral);
+  background: #fff;
   vertical-align: top;
 }
 .checklist li > span:last-child {
   display: table-cell;
-  padding-left: 8px;
+  padding-left: 10px;
   vertical-align: top;
 }
 
 .table-wrap {
-  margin: 10px 0 14px;
-  border: 1px solid var(--line);
+  margin: 12px 0 16px;
+  border: 2px solid var(--teal);
+  overflow: hidden;
 }
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 9.5pt;
-}
+table { width: 100%; border-collapse: collapse; font-size: 10pt; }
 th {
-  background: var(--sage);
+  background: var(--teal);
   color: white;
   text-align: left;
-  padding: 7px 8px;
-  font-family: 'DejaVu Sans', sans-serif;
+  padding: 9px 10px;
+  font-family: "DejaVu Sans", sans-serif;
 }
 td {
-  padding: 7px 8px;
+  padding: 8px 10px;
   border-bottom: 1px solid var(--line);
   vertical-align: top;
+  background: white;
 }
-tr:nth-child(even) td { background: var(--sand); }
+tr:nth-child(even) td { background: var(--teal-soft); }
 
-.cta-box {
+.photo-break {
+  margin: 16px 0;
   break-inside: avoid;
-  background: linear-gradient(135deg, var(--sage-deep), #4f8778);
+}
+.photo-break img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-bottom: 8px solid var(--accent, var(--coral));
+}
+.photo-break.tall img { height: 250px; }
+.photo-break figcaption,
+.duo figcaption {
+  font-size: 9pt;
+  color: var(--muted);
+  padding: 6px 2px 0;
+  font-style: italic;
+}
+.duo {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  margin: 14px 0 16px;
+  break-inside: avoid;
+}
+.duo figure {
+  display: table-cell;
+  width: 50%;
+  padding-right: 6px;
+  margin: 0;
+  vertical-align: top;
+}
+.duo figure:last-child { padding-right: 0; padding-left: 6px; }
+.duo img {
+  width: 100%;
+  height: 165px;
+  object-fit: cover;
+  border-bottom: 6px solid var(--sun);
+}
+
+.color-strip {
+  background: linear-gradient(90deg, var(--coral), var(--sun), var(--teal));
+  height: 8px;
+  margin: 8px 0 14px;
+}
+.divider {
+  text-align: center;
+  margin: 16px 0;
+}
+.divider span {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  margin: 0 4px;
+  background: var(--coral);
+}
+.divider span:nth-child(2) { background: var(--sun); }
+.divider span:nth-child(3) { background: var(--teal); }
+
+.cta-panel {
+  break-inside: avoid;
+  background: linear-gradient(135deg, #0a6e6a, #3d8bfd 70%, #c44569);
+  color: white;
+  padding: 18px 16px;
+  margin: 16px 0;
+}
+.cta-panel h3, .cta-panel strong { color: white !important; }
+.cta-panel p, .cta-panel li { color: rgba(255,255,255,.96); }
+.cta-panel .checklist {
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.55);
+}
+.cta-panel .checklist .box { border-color: var(--sun); background: transparent; }
+
+.extras { break-before: page; }
+.extras-banner {
+  background: var(--berry);
   color: white;
   padding: 16px;
-  margin: 14px 0;
+  margin: 0 0 14px;
 }
-.cta-box h3, .cta-box strong { color: white; }
-.cta-box p, .cta-box li { color: rgba(255,255,255,0.96); }
-
-.footer-note {
+.extras-banner h2 { color: white; margin: 0; }
+.fine {
   text-align: center;
   color: var(--muted);
-  font-size: 9pt;
+  font-size: 9.5pt;
   margin-top: 18px;
   padding-top: 10px;
-  border-top: 1px solid var(--line);
+  border-top: 2px solid var(--line);
 }
-
-.extras-section { break-before: page; }
+.soft-h { color: var(--berry); font-size: 14pt; }
+.pad { padding: 0 1mm; }
+.big-close {
+  break-before: page;
+}
+.big-close .hero { height: 210px; }
+.big-close .hero img { height: 210px; }
 </style>
 </head>
 <body>
   <section class="cover">
-    <img class="cover-image" src="file:///workspace/ebook/assets/capa-ebook.png" alt="Capa" />
-    <div class="cover-veil"></div>
-    <div class="cover-content">
-      <div class="cover-badge">Coleção Organização Real para Mães · E-book 1</div>
+    <img class="bg" src="file:///workspace/ebook/assets/stock/cover-bright.jpg" alt="Capa" />
+    <div class="veil"></div>
+    <div class="accent-bar"></div>
+    <div class="copy">
+      <div class="pill">Coleção Organização Real para Mães · E-book 1</div>
       <h1>Rotina Leve com Família Grande</h1>
-      <p class="subtitle">O método prático para mães sobrecarregadas organizarem a casa, o tempo e a mente — sem culpa e sem perfeição.</p>
-      <p class="cover-meta">Para mães de famílias grandes — e para toda mãe que sente que o dia nunca é suficiente.</p>
+      <p class="sub">O método prático para mães sobrecarregadas organizarem a casa, o tempo e a mente — sem culpa e sem perfeição.</p>
+      <p class="meta">Para mães de famílias grandes — e para toda mãe que sente que o dia nunca é suficiente.</p>
     </div>
   </section>
 
-  <section class="page-pad">
-    <div class="intro-card"><h2>Introdução</h2>
-<p>Se você abriu este e-book, provavelmente já teve um dia assim:</p>
+  
+    <section class="intro-wrap pad">
+      <div class="intro-banner">
+        <h2>Introdução</h2>
+        <p>Conectando com a dor da mãe sobrecarregada — e mostrando que dá para ter rotina leve com método.</p>
+      </div>
+      <div class="lead"><p>Se você abriu este e-book, provavelmente já teve um dia assim:</p></div>
+<figure class="photo-break">
+  <img src="file:///workspace/ebook/assets/stock/cover-bright.jpg" alt="Você não está sozinha nessa rotina." />
+  <figcaption>Você não está sozinha nessa rotina.</figcaption>
+</figure>
 <p>Acordou antes do sol. Trouxe café (ou quase). Resolveu choro, fralda, lanche, briga por um brinquedo, mensagem da escola, cesta de roupa suja e a pergunta eterna: <em>“O que a gente come hoje?”</em>. No fim da noite, o corpo pediu pausa — mas a mente ainda rodava a lista do amanhã.</p>
 <p>Eu te entendo.</p>
 <p>Sou mãe de cinco filhos pequenos. Moro na Alemanha. E compartilho a minha rotina real — não a versão filtrada, impecável, de “mãe que dá conta de tudo”. A rotina real tem dias leves e dias caóticos. Tem café frio. Tem plano B. Tem noites em que o único objetivo é chegar com todo mundo vivo, alimentado e (mais ou menos) de pijama.</p>
 <p>Por muito tempo, eu acreditei que o problema era eu: falta de disciplina, falta de energia, falta de “jeito”. Até perceber que o problema não era falta de esforço. Era falta de <strong>método</strong>.</p>
 <p>Família grande não se organiza com força de vontade. Se organiza com sistemas simples, repetíveis e realistas.</p>
 <p>Este e-book não promete uma casa de revista nem uma mãe zen 24 horas. Ele promete algo mais útil:</p>
-<ul>
+<ul class="bullets">
 <li>menos decisões no automático;</li>
 <li>menos culpa no fim do dia;</li>
 <li>mais previsibilidade no caos;</li>
 <li>e pequenos espaços de tempo (e de paz) para você.</li>
 </ul>
-<p>Você não precisa ser perfeita.</p>
-<p>Você precisa de um caminho.</p>
-<p>Vamos juntas?</p>
-<hr class="soft-rule" /></div>
-  </section>
+    <div class="promise">
+      <div class="cell"><span class="n">01</span><p>Menos decisões no automático</p></div>
+      <div class="cell"><span class="n">02</span><p>Menos culpa no fim do dia</p></div>
+      <div class="cell"><span class="n">03</span><p>Mais previsibilidade no caos</p></div>
+      <div class="cell"><span class="n">04</span><p>Espaços reais de paz para você</p></div>
+    </div>
+    
 
-  <section class="toc-section page-pad">
-  <h2>Índice / Sumário</h2>
-  <p>Cinco capítulos práticos para transformar sobrecarga em sistema leve e repetível.</p>
-  <div class="toc-grid"><div class="toc-item">
-  <div class="toc-num"><span>1</span></div>
-  <div class="toc-body">
-    <h3>Cozinha que trabalha por você</h3>
-    <p>Planejamento de refeições e cozinha eficiente para famílias grandes</p>
-  </div>
-</div><div class="toc-item">
-  <div class="toc-num"><span>2</span></div>
-  <div class="toc-body">
-    <h3>A casa não se limpa sozinha (mas pode fluir melhor)</h3>
-    <p>Organização de horários, tarefas domésticas e divisão de responsabilidades</p>
-  </div>
-</div><div class="toc-item">
-  <div class="toc-num"><span>3</span></div>
-  <div class="toc-body">
-    <h3>Tempo para eles, tempo para você</h3>
-    <p>Gerenciamento de tempo entre cuidados com as crianças e tempo próprio</p>
-  </div>
-</div><div class="toc-item">
-  <div class="toc-num"><span>4</span></div>
-  <div class="toc-body">
-    <h3>Filhos que ajudam (de verdade)</h3>
-    <p>Criação de autonomia e participação das crianças na rotina</p>
-  </div>
-</div><div class="toc-item">
-  <div class="toc-num"><span>5</span></div>
-  <div class="toc-body">
-    <h3>Calma no meio do caos</h3>
-    <p>Saúde mental e equilíbrio emocional no dia a dia</p>
-  </div>
+<div class="divider"><span></span><span></span><span></span></div>
+    <div class="highlight-box">
+      <p><strong>Você não precisa ser perfeita. Você precisa de um caminho.</strong><br/>Vamos juntas?</p>
+    </div>
+    <div class="duo">
+  <figure><img src="file:///workspace/ebook/assets/stock/family.jpg" alt="Rotina real em família" /><figcaption>Rotina real em família</figcaption></figure>
+  <figure><img src="file:///workspace/ebook/assets/stock/coffee.jpg" alt="Pequenas pausas que salvam o dia" /><figcaption>Pequenas pausas que salvam o dia</figcaption></figure>
 </div>
-    <div class="toc-item">
-      <div class="toc-num"><span style="background:#e8a090;color:#2c241f">+</span></div>
-      <div class="toc-body">
-        <h3>Conclusão, CTA e Extras</h3>
-        <p>Encerramento inspirador, próximos e-books da coleção e checklists imprimíveis.</p>
-      </div>
+    <figure class="photo-break">
+  <img src="file:///workspace/ebook/assets/stock/smile.jpg" alt="Método simples. Vida real. Resultado leve." />
+  <figcaption>Método simples. Vida real. Resultado leve.</figcaption>
+</figure>
+    
+    </section>
+    
+  <section class="toc pad">
+      <h2>O que você vai encontrar</h2>
+      <p>Cinco capítulos práticos, visuais e diretos — para aplicar ainda esta semana.</p>
+      <div class="color-strip"></div>
+      
+        <div class="toc-card">
+          <div class="thumb"><img src="file:///workspace/ebook/assets/stock/kitchen-1.jpg" alt="Cozinha que trabalha por você" /></div>
+          <div class="info">
+            <span class="num" style="background:#ff6b57">Capítulo 1</span>
+            <h3>Cozinha que trabalha por você</h3>
+            <p>Refeições e cozinha eficiente para família grande</p>
+          </div>
+        </div>
+        <div class="toc-card">
+          <div class="thumb"><img src="file:///workspace/ebook/assets/stock/tidy.jpg" alt="A casa pode fluir melhor" /></div>
+          <div class="info">
+            <span class="num" style="background:#0f8f8a">Capítulo 2</span>
+            <h3>A casa pode fluir melhor</h3>
+            <p>Horários, tarefas e divisão de responsabilidades</p>
+          </div>
+        </div>
+        <div class="toc-card">
+          <div class="thumb"><img src="file:///workspace/ebook/assets/stock/time-1.jpg" alt="Tempo para eles e para você" /></div>
+          <div class="info">
+            <span class="num" style="background:#3d8bfd">Capítulo 3</span>
+            <h3>Tempo para eles e para você</h3>
+            <p>Cuidados com os filhos + tempo próprio</p>
+          </div>
+        </div>
+        <div class="toc-card">
+          <div class="thumb"><img src="file:///workspace/ebook/assets/stock/play.jpg" alt="Filhos que ajudam de verdade" /></div>
+          <div class="info">
+            <span class="num" style="background:#c44569">Capítulo 4</span>
+            <h3>Filhos que ajudam de verdade</h3>
+            <p>Autonomia e participação na rotina</p>
+          </div>
+        </div>
+        <div class="toc-card">
+          <div class="thumb"><img src="file:///workspace/ebook/assets/stock/calm-2.jpg" alt="Calma no meio do caos" /></div>
+          <div class="info">
+            <span class="num" style="background:#ffc857">Capítulo 5</span>
+            <h3>Calma no meio do caos</h3>
+            <p>Saúde mental no dia a dia</p>
+          </div>
+        </div>
+    </section>
+  <section class="chapter" style="--accent:#ff6b57">
+  <div class="hero">
+    <img src="file:///workspace/ebook/assets/stock/kitchen-1.jpg" alt="Cozinha que trabalha por você" />
+    <div class="hero-shade"></div>
+    <div class="hero-copy">
+      <span class="badge">Capítulo 1</span>
+      <h1>Cozinha que trabalha por você</h1>
+      <p>Planejamento de refeições e cozinha eficiente para famílias grandes</p>
     </div>
   </div>
-</section>
-
-  <div class="page-pad"><section class="chapter">
-<div class="chapter-hero">
-<img src="file:///workspace/ebook/assets/cap1-cozinha.png" alt="Capítulo 1" />
-<div class="chapter-hero-overlay">
-<span class="chapter-kicker">Capítulo 1</span>
-<h1>Cozinha que trabalha por você</h1>
-<p class="chapter-sub">Planejamento de refeições e cozinha eficiente para famílias grandes</p>
-</div></div>
-<h3 class="pain-title">A dor real</h3>
+  <div class="chapter-body"><h3 class="eyebrow-title">A dor real</h3>
 <p>Em família grande, a cozinha não é só “preparar comida”. É logística. É orçamento. É energia mental. É a pergunta que aparece três vezes por dia e ainda invade o WhatsApp, o mercado e a geladeira às 18h47.</p>
 <p>Quando não há plano, acontece o clássico:</p>
-<ul>
+<ul class="bullets">
 <li>compras impulsivas;</li>
 <li>desperdício;</li>
 <li>jantar de emergência (caro e estressante);</li>
 <li>mãe exausta, crianças irritadas, casa bagunçada.</li>
 </ul>
 <p>A boa notícia: você não precisa de cardápios gourmet. Precisa de <strong>um sistema curto, repetível e flexível</strong>.</p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">O método em 4 passos: Planejar → Comprar → Preparar → Repetir</h3>
+<figure class="photo-break tall">
+  <img src="file:///workspace/ebook/assets/stock/veggies.jpg" alt="Comida de verdade, sistema simples" />
+  <figcaption>Comida de verdade, sistema simples</figcaption>
+</figure>
 <h4>Passo 1 — Defina o “esqueleto da semana”</h4>
 <p>Em vez de inventar 21 refeições do zero, crie categorias fixas. Exemplo para família grande:</p>
-<div class="table-wrap"><table>
-<thead><tr><th>Dia</th><th>Tema</th><th>Exemplo</th></tr></thead><tbody>
+<div class="table-wrap"><table><thead><tr>
+<th>Dia</th><th>Tema</th><th>Exemplo</th>
+</tr></thead><tbody>
 <tr><td>Segunda</td><td>Proteína + acompanhamento simples</td><td>Frango + arroz + salada</td></tr>
 <tr><td>Terça</td><td>One-pot / panela única</td><td>Ensopado, lentilha, chili</td></tr>
 <tr><td>Quarta</td><td>Massa ou carboidrato rápido</td><td>Macarrão + molho + legumes</td></tr>
@@ -457,11 +595,14 @@ tr:nth-child(even) td { background: var(--sand); }
 <tr><td>Sábado</td><td>Comida de lote (batch)</td><td>Assados, sopas, bases</td></tr>
 <tr><td>Domingo</td><td>Refeição livre + prep leve</td><td>Café reforçado + prep da semana</td></tr>
 </tbody></table></div>
-<p class="callout"><strong>Dica de ouro:</strong> temas reduzem decisão. Decisão cansa mais do que cozinhar.</p>
-<hr class="soft-rule" />
+<div class="tip"><strong>Dica de ouro:</strong> temas reduzem decisão. Decisão cansa mais do que cozinhar.</div>
+<div class="divider"><span></span><span></span><span></span></div>
 <h4>Passo 2 — Monte o cardápio em 20 minutos (domingo ou sábado)</h4>
 <p>Checklist rápido:</p>
-<ul class="checklist">
+<figure class="photo-break">
+  <img src="file:///workspace/ebook/assets/stock/breakfast.jpg" alt="Café da manhã simples também é estratégia" />
+  <figcaption>Café da manhã simples também é estratégia</figcaption>
+</figure><ul class="checklist">
 <li><span class="box"></span><span>Olhar o que já tem na despensa/geladeira/freezer</span></li>
 <li><span class="box"></span><span>Escolher 5–7 jantares (almoço pode repetir ou usar sobra)</span></li>
 <li><span class="box"></span><span>Definir cafés da manhã “padrão” (2–3 opções só)</span></li>
@@ -469,18 +610,21 @@ tr:nth-child(even) td { background: var(--sand); }
 <li><span class="box"></span><span>Anotar o que falta na lista de compras</span></li>
 <li><span class="box"></span><span>Marcar 1 dia “coringa” (para imprevistos)</span></li>
 </ul>
-<p class="callout"><strong>Regra dos 80/20:</strong></p>
+<div class="tip"><strong>Regra dos 80/20:</strong></div>
 <p>80% refeições conhecidas e amadas pela família.</p>
 <p>20% novidade (se sobrar energia).</p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h4>Passo 3 — Compras inteligentes (menos idas, menos estresse)</h4>
-<p>Para famílias grandes, o ideal é:</p>
-<ol>
+<p>Para famílias grandes, o ideal é:</p><div class="duo">
+  <figure><img src="file:///workspace/ebook/assets/stock/kitchen-2.jpg" alt="Prep que economiza energia" /><figcaption>Prep que economiza energia</figcaption></figure>
+  <figure><img src="file:///workspace/ebook/assets/stock/market.jpg" alt="Compras com lista e menos estresse" /><figcaption>Compras com lista e menos estresse</figcaption></figure>
+</div></p>
+<ol class="steps">
 <li><strong>Compra principal semanal</strong> (1x)</li>
 <li><strong>Reforço rápido</strong> (leite, pão, frutas) 1x se necessário</li>
 </ol>
 <p>Modelo de lista por zonas (adapte ao seu mercado na Alemanha: Aldi, Lidl, Rewe, etc.):</p>
-<ul>
+<ul class="bullets">
 <li>Hortifruti</li>
 <li>Padaria / frios</li>
 <li>Mercearia seca</li>
@@ -490,7 +634,7 @@ tr:nth-child(even) td { background: var(--sand); }
 </ul>
 <p><strong>Hack anti-esquecimento:</strong></p>
 <p>Liste por <em>refeição</em>, depois transforme em lista por corredor. Ex.: “frango terça” → frango, arroz, brócolis, azeite.</p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h4>Passo 4 — Prep de 60–90 minutos (o que muda o jogo)</h4>
 <p>Você não precisa passar o domingo inteiro na cozinha. Foque no que mais economiza tempo:</p>
 <p><strong>Prep mínimo viável:</strong></p>
@@ -502,13 +646,13 @@ tr:nth-child(even) td { background: var(--sand); }
 <li><span class="box"></span><span>Montar 2 potes de lanche pronto</span></li>
 <li><span class="box"></span><span>Congelar 1 emergência (sopa, molho, almôndegas)</span></li>
 </ul>
-<p class="callout"><strong>Frase para lembrar:</strong></p>
+<div class="tip"><strong>Frase para lembrar:</strong></div>
 <p><em>Quem prepara um pouco no fim de semana, compra paz nos dias de semana.</em></p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Estratégias específicas para família grande</h3>
 <h4>1) Cozinhe “em camadas”, não em pratos isolados</h4>
 <p>Exemplo com carne moída:</p>
-<ul>
+<ul class="bullets">
 <li>Segunda: molho bolonhesa</li>
 <li>Terça: mesma base vira recheio de panqueca/wrap</li>
 <li>Quarta: sobra no freezer para emergência</li>
@@ -516,7 +660,7 @@ tr:nth-child(even) td { background: var(--sand); }
 <p>Um esforço → três usos.</p>
 <h4>2) Tenha um “menu de emergência de 15 minutos”</h4>
 <p>Escreva e cole na geladeira:</p>
-<ol>
+<ol class="steps">
 <li>Ovos + pão + salada</li>
 <li>Macarrão com atum/molho pronto + ervilha</li>
 <li>Wraps com o que tiver</li>
@@ -528,8 +672,8 @@ tr:nth-child(even) td { background: var(--sand); }
 <h4>3) Aceite o “bom o bastante”</h4>
 <p>Arroz, proteína, vegetal. Pronto.</p>
 <p>Criança alimentada &gt; Instagram perfeito.</p>
-<hr class="soft-rule" />
-<h3 class="checklist-title">Checklist semanal da cozinha (imprimível)</h3>
+<div class="divider"><span></span><span></span><span></span></div>
+<h3 class="check-h">Checklist semanal da cozinha (imprimível)</h3>
 <p><strong>Domingo (20–90 min):</strong></p>
 <ul class="checklist">
 <li><span class="box"></span><span>Cardápio da semana definido</span></li>
@@ -545,45 +689,47 @@ tr:nth-child(even) td { background: var(--sand); }
 <li><span class="box"></span><span>Anotar o que faltou para a próxima compra</span></li>
 <li><span class="box"></span><span>1 noite sem culpa (refeição simples vale)</span></li>
 </ul>
-<hr class="soft-rule" />
-<h3 class="action-title">Mini plano de ação (comece esta semana)</h3>
-<ol>
+<div class="divider"><span></span><span></span><span></span></div>
+<h3 class="action-h">Mini plano de ação (comece esta semana)</h3>
+<ol class="steps">
 <li>Escolha <strong>5 jantares</strong> que sua família já aceita.</li>
 <li>Compre só o necessário para esses 5.</li>
 <li>Faça <strong>um prep de 45 minutos</strong>.</li>
 <li>Cole o <strong>menu de emergência</strong> na geladeira.</li>
 <li>Repita na semana seguinte — ajuste só 1 coisa.</li>
 </ol>
-<hr class="soft-rule" />
-</section>
-<section class="chapter">
-<div class="chapter-hero">
-<img src="file:///workspace/ebook/assets/cap2-casa.png" alt="Capítulo 2" />
-<div class="chapter-hero-overlay">
-<span class="chapter-kicker">Capítulo 2</span>
-<h1>A casa não se limpa sozinha (mas pode fluir melhor)</h1>
-<p class="chapter-sub">Organização de horários, tarefas domésticas e divisão de responsabilidades</p>
-</div></div>
-<h3 class="pain-title">A verdade que alivia</h3>
+<div class="divider"><span></span><span></span><span></span></div></div></section>
+<section class="chapter" style="--accent:#0f8f8a">
+  <div class="hero">
+    <img src="file:///workspace/ebook/assets/stock/tidy.jpg" alt="A casa não se limpa sozinha (mas pode fluir melhor)" />
+    <div class="hero-shade"></div>
+    <div class="hero-copy">
+      <span class="badge">Capítulo 2</span>
+      <h1>A casa não se limpa sozinha (mas pode fluir melhor)</h1>
+      <p>Horários, tarefas domésticas e divisão de responsabilidades</p>
+    </div>
+  </div>
+  <div class="chapter-body"><h3 class="eyebrow-title">A verdade que alivia</h3>
 <p>Se a casa parece nunca ficar pronta, não é porque você é desorganizada. É porque uma casa com muitas crianças é um sistema vivo: gera bagunça na mesma velocidade em que você organiza.</p>
 <p>O objetivo não é “casa perfeita”.</p>
 <p>O objetivo é <strong>casa funcional com menos atrito</strong>.</p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Princípio 1 — Zonas, não maratonas</h3>
 <p>Limpeza de 4 horas no sábado esgota.</p>
 <p>Manutenção diária de 10–20 minutos sustenta.</p>
 <p>Divida a casa em zonas:</p>
-<ol>
+<ol class="steps">
 <li>Cozinha</li>
 <li>Banheiros</li>
 <li>Sala / áreas comuns</li>
 <li>Quartos</li>
 <li>Lavanderia / entrada</li>
 </ol>
-<p class="callout"><strong>Regra:</strong> cada dia tem 1 foco principal + reset rápido geral.</p>
+<div class="tip"><strong>Regra:</strong> cada dia tem 1 foco principal + reset rápido geral.</div>
 <h4>Exemplo de rodízio semanal (família grande)</h4>
-<div class="table-wrap"><table>
-<thead><tr><th>Dia</th><th>Foco</th><th>Tempo sugerido</th></tr></thead><tbody>
+<div class="table-wrap"><table><thead><tr>
+<th>Dia</th><th>Foco</th><th>Tempo sugerido</th>
+</tr></thead><tbody>
 <tr><td>Segunda</td><td>Cozinha profunda leve (pia, fogão, lixo)</td><td>20–30 min</td></tr>
 <tr><td>Terça</td><td>Banheiros</td><td>20–30 min</td></tr>
 <tr><td>Quarta</td><td>Áreas comuns (chão, sofá, brinquedos)</td><td>20–30 min</td></tr>
@@ -592,11 +738,21 @@ tr:nth-child(even) td { background: var(--sand); }
 <tr><td>Sábado</td><td>1 tarefa extra (forno, janelas, organização)</td><td>30–60 min</td></tr>
 <tr><td>Domingo</td><td>Descanso + prep leve</td><td>mínimo necessário</td></tr>
 </tbody></table></div>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Princípio 2 — Rotinas âncora (manhã, tarde, noite)</h3>
-<p>Âncoras são sequências curtas que se repetem todo dia. Elas reduzem discussão e decisão.</p>
+<figure class="photo-break">
+  <img src="file:///workspace/ebook/assets/stock/checklist-img.jpg" alt="Âncoras curtas reduzem discussão" />
+  <figcaption>Âncoras curtas reduzem discussão</figcaption>
+</figure>
+<p>Âncoras são sequências curtas que se repetem todo dia. Elas reduzem discussão e decisão.</p><div class="duo">
+  <figure><img src="file:///workspace/ebook/assets/stock/home-2.jpg" alt="Casa funcional &gt; casa perfeita" /><figcaption>Casa funcional &gt; casa perfeita</figcaption></figure>
+  <figure><img src="file:///workspace/ebook/assets/stock/laundry.jpg" alt="Lavanderia em ritmo sustentável" /><figcaption>Lavanderia em ritmo sustentável</figcaption></figure>
+</div></p>
 <h4>Rotina âncora da manhã (15–25 min)</h4>
-<ul class="checklist">
+<figure class="photo-break">
+  <img src="file:///workspace/ebook/assets/stock/cozy.jpg" alt="Uma superfície limpa já muda o clima da casa" />
+  <figcaption>Uma superfície limpa já muda o clima da casa</figcaption>
+</figure><ul class="checklist">
 <li><span class="box"></span><span>Camas puxadas / travesseiros no lugar</span></li>
 <li><span class="box"></span><span>Pijamas no cesto</span></li>
 <li><span class="box"></span><span>Café/café da manhã na mesa</span></li>
@@ -618,12 +774,12 @@ tr:nth-child(even) td { background: var(--sand); }
 <li><span class="box"></span><span>Roupas para o dia seguinte</span></li>
 <li><span class="box"></span><span>Checklist rápido do amanhã (escola, atividades, lembretes)</span></li>
 </ul>
-<p class="callout"><strong>Dica:</strong> use um timer visível. Crianças respondem melhor a tempo do que a sermão.</p>
-<hr class="soft-rule" />
+<div class="tip"><strong>Dica:</strong> use um timer visível. Crianças respondem melhor a tempo do que a sermão.</div>
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Princípio 3 — Divisão de responsabilidades (sem guerra)</h3>
 <p>Se você faz tudo, o sistema depende de uma pessoa só — e essa pessoa (você) quebra.</p>
 <h4>Como dividir sem sobrecarregar ninguém</h4>
-<ol>
+<ol class="steps">
 <li><strong>Liste todas as tarefas recorrentes</strong> (não só limpeza: lixo, lavanderia, compras, banho, lição, organização de mochila).</li>
 <li><strong>Separe o que só adulto faz</strong> (segurança, finanças, tarefas pesadas).</li>
 <li><strong>Distribua o restante</strong> por capacidade e idade.</li>
@@ -635,20 +791,20 @@ tr:nth-child(even) td { background: var(--sand); }
 <p><strong>Adulto 2 / parceiro(a) (se houver):</strong> banheiros + lixo + 2 jantares/semana + banho de 1–2 filhos</p>
 <p><strong>Crianças:</strong> tarefas por idade (ver Capítulo 4)</p>
 <p><strong>Externo (se possível):</strong> 1 ajuda pontual (passar roupa, limpeza quinzenal, babysitter ocasional)</p>
-<p class="callout"><strong>Se você cria sozinha:</strong> o sistema precisa ser ainda mais simples. Priorize o essencial e elimine o que não impacta saúde/segurança/paz.</p>
-<hr class="soft-rule" />
+<div class="tip"><strong>Se você cria sozinha:</strong> o sistema precisa ser ainda mais simples. Priorize o essencial e elimine o que não impacta saúde/segurança/paz.</div>
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">A regra dos 3 cestos (anti-caos visual)</h3>
 <p>Em cada área principal, tenha:</p>
-<ol>
+<ol class="steps">
 <li><strong>Cesto de retorno</strong> (itens que pertencem a outro cômodo)</li>
 <li><strong>Cesto de doação/desapego</strong></li>
 <li><strong>Cesto de “decidir depois”</strong> (para não travar agora)</li>
 </ol>
 <p>Uma vez por dia, esvazie o cesto de retorno em 5 minutos. Isso evita o “touremundo na sala”.</p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Lavanderia sem drama (família grande)</h3>
 <p>Sistema simples:</p>
-<ul>
+<ul class="bullets">
 <li><strong>1 cesto por tipo</strong> (clara / escura / toalha-roupa de cama) <em>ou</em> 1 cesto por pessoa, se funcionar melhor</li>
 <li><strong>1 carga por dia</strong> (meta realista)</li>
 <li><strong>Dobrar na hora</strong> (ou no máximo no mesmo dia)</li>
@@ -662,8 +818,8 @@ tr:nth-child(even) td { background: var(--sand); }
 <li><span class="box"></span><span>Dobrar / pendurar</span></li>
 <li><span class="box"></span><span>Guardar (meta: não deixar “morando” no sofá)</span></li>
 </ul>
-<hr class="soft-rule" />
-<h3 class="checklist-title">Checklist semanal da casa</h3>
+<div class="divider"><span></span><span></span><span></span></div>
+<h3 class="check-h">Checklist semanal da casa</h3>
 <ul class="checklist">
 <li><span class="box"></span><span>Rodízio do dia feito (mesmo que imperfeito)</span></li>
 <li><span class="box"></span><span>1 reset geral com timer (15 min)</span></li>
@@ -672,59 +828,67 @@ tr:nth-child(even) td { background: var(--sand); }
 <li><span class="box"></span><span>Entrada da casa transitável (sapatos/casacos)</span></li>
 <li><span class="box"></span><span>1 superfície “sagrada” limpa (bancada ou mesa) — âncora visual de ordem</span></li>
 </ul>
-<hr class="soft-rule" />
-<h3 class="action-title">Mini plano de ação</h3>
-<ol>
+<div class="divider"><span></span><span></span><span></span></div>
+<h3 class="action-h">Mini plano de ação</h3>
+<ol class="steps">
 <li>Escolha <strong>3 âncoras</strong> (manhã, tarde, noite) e escreva em papel.</li>
 <li>Defina o <strong>rodízio da semana</strong> (1 foco por dia).</li>
 <li>Converse com a casa: “A partir de hoje, cada um tem 1 missão diária.”</li>
 <li>Por 7 dias, meça só consistência — não perfeição.</li>
 </ol>
-<hr class="soft-rule" />
-</section>
-<section class="chapter">
-<div class="chapter-hero">
-<img src="file:///workspace/ebook/assets/cap3-tempo.png" alt="Capítulo 3" />
-<div class="chapter-hero-overlay">
-<span class="chapter-kicker">Capítulo 3</span>
-<h1>Tempo para eles, tempo para você</h1>
-<p class="chapter-sub">Gerenciamento de tempo entre cuidados com as crianças e tempo próprio</p>
-</div></div>
-<h3 class="pain-title">A culpa que rouba sua energia</h3>
+<div class="divider"><span></span><span></span><span></span></div></div></section>
+<section class="chapter" style="--accent:#3d8bfd">
+  <div class="hero">
+    <img src="file:///workspace/ebook/assets/stock/time-1.jpg" alt="Tempo para eles, tempo para você" />
+    <div class="hero-shade"></div>
+    <div class="hero-copy">
+      <span class="badge">Capítulo 3</span>
+      <h1>Tempo para eles, tempo para você</h1>
+      <p>Gerenciamento de tempo entre cuidados e tempo próprio</p>
+    </div>
+  </div>
+  <div class="chapter-body"><h3 class="eyebrow-title">A culpa que rouba sua energia</h3>
 <p>Muitas mães só descansam quando tudo está pronto.</p>
 <p>O problema: com família grande, <strong>tudo nunca está pronto</strong>.</p>
 <p>Então o descanso é adiado. E adiado. E adiado.</p>
 <p>Até virar irritação, choro no banheiro e sensação de “sumir de si mesma”.</p>
 <p>Tempo próprio não é egoísmo.</p>
 <p>É manutenção da mulher que sustenta o sistema.</p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Mude a pergunta</h3>
 <p>Em vez de: <em>“Quando eu vou ter tempo?”</em></p>
 <p>Pergunte: <em>“Onde eu vou encaixar blocos de tempo — mesmo pequenos?”</em></p>
-<p>Você não precisa de um spa de 3 horas (ainda).</p>
+<p>Você não precisa de um spa de 3 horas (ainda).</p><div class="duo">
+  <figure><img src="file:///workspace/ebook/assets/stock/time-2.jpg" alt="Blocos reais de descanso" /><figcaption>Blocos reais de descanso</figcaption></figure>
+  <figure><img src="file:///workspace/ebook/assets/stock/coffee.jpg" alt="Micro-pausas que recarregam" /><figcaption>Micro-pausas que recarregam</figcaption></figure>
+</div></p>
 <p>Precisa de <strong>blocos reais e protegidos</strong>.</p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Ferramenta 1 — O mapa da semana (visão realista)</h3>
+<figure class="photo-break">
+  <img src="file:///workspace/ebook/assets/stock/planner.jpg" alt="O que não está no papel some no caos" />
+  <figcaption>O que não está no papel some no caos</figcaption>
+</figure>
 <p>Pegue uma folha e divida:</p>
-<ul>
+<ul class="bullets">
 <li>manhãs</li>
 <li>tardes</li>
 <li>noites</li>
 <li>fins de semana</li>
 </ul>
 <p>Marque em cores:</p>
-<ul>
+<ul class="bullets">
 <li><strong>Vermelho:</strong> compromissos fixos (escola, trabalho, atividades)</li>
 <li><strong>Amarelo:</strong> cuidados essenciais (refeições, banho, sono)</li>
 <li><strong>Verde:</strong> blocos flexíveis (aqui mora sua oportunidade)</li>
 <li><strong>Azul:</strong> tempo próprio / casal / amizade / fé / hobby</li>
 </ul>
 <p>Se não existe nenhum azul, o sistema está inviável. Vamos criar.</p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Ferramenta 2 — Blocos de tempo próprio (menu por duração)</h3>
 <p>Escolha conforme a fase da sua vida:</p>
 <h4>10 minutos (micro-restauração)</h4>
-<ul>
+<ul class="bullets">
 <li>chá sem celular</li>
 <li>alongamento</li>
 <li>banho sem pressa extrema</li>
@@ -732,7 +896,7 @@ tr:nth-child(even) td { background: var(--sand); }
 <li>silêncio no carro / no quarto</li>
 </ul>
 <h4>30 minutos (recarga real)</h4>
-<ul>
+<ul class="bullets">
 <li>caminhada</li>
 <li>podcast + café</li>
 <li>leitura</li>
@@ -741,35 +905,35 @@ tr:nth-child(even) td { background: var(--sand); }
 <li>organização criativa (seu conteúdo, se for o caso)</li>
 </ul>
 <h4>90 minutos (bloco de oxigênio semanal)</h4>
-<ul>
+<ul class="bullets">
 <li>sair sozinha</li>
 <li>encontro com amiga</li>
 <li>manicure / cabelo / consulta</li>
 <li>bloco criativo profundo</li>
 <li>descanso sem demanda</li>
 </ul>
-<p class="callout"><strong>Meta mínima sugerida:</strong></p>
-<ul>
+<div class="tip"><strong>Meta mínima sugerida:</strong></div>
+<ul class="bullets">
 <li>10 min/dia</li>
 <li>30 min/3x semana</li>
 <li>90 min/1x semana</li>
 </ul>
 <p>Comece menor do que você acha “aceitável”. Consistência vence intensidade.</p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Ferramenta 3 — A técnica dos turnos (mesmo em casa)</h3>
 <p>Se há outro adulto:</p>
-<ul>
+<ul class="bullets">
 <li>Turno A: um cuida, o outro pausa</li>
 <li>Turno B: inverte</li>
 </ul>
 <p>Se você está sozinha:</p>
-<ul>
+<ul class="bullets">
 <li>Use <strong>janelas naturais</strong> (sono do bebê, desenho assistido, momento de brincadeira independente)</li>
 <li>Combine com <strong>atividade âncora das crianças</strong> (“agora é hora do quiet time / brincadeira no tapete / livro”)</li>
 </ul>
 <h4>Quiet time (mesmo sem soneca)</h4>
 <p>20–40 minutos em que cada criança fica em atividade calma no próprio espaço:</p>
-<ul>
+<ul class="bullets">
 <li>livro</li>
 <li>massinha</li>
 <li>Lego</li>
@@ -777,73 +941,81 @@ tr:nth-child(even) td { background: var(--sand); }
 <li>caderno de desenho</li>
 </ul>
 <p>Treine. No começo falha. Na terceira semana, melhora.</p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Ferramenta 4 — Prioridade do dia (1–3–5)</h3>
 <p>Todo manhã (ou na noite anterior), defina:</p>
-<ul>
+<ul class="bullets">
 <li><strong>1 prioridade principal</strong> (se só isso sair, o dia valeu)</li>
 <li><strong>3 tarefas importantes</strong></li>
 <li><strong>5 tarefas rápidas</strong> (opcional)</li>
 </ul>
 <p>Exemplo de mãe de família grande:</p>
-<ul>
+<ul class="bullets">
 <li>1: consulta médica / entregar trabalho / fazer compra principal</li>
 <li>3: lavar 1 carga, prep do jantar, responder mensagens da escola</li>
 <li>5: ligar máquina, encher garrafas, separar roupa, aspirar entrada, preparar mochila</li>
 </ul>
 <p>Tudo que sobrar é bônus — não evidência de fracasso.</p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Proteja o tempo próprio como protege o das crianças</h3>
 <p>Checklist anti-autoabandono:</p>
-<ul class="checklist">
+<figure class="photo-break">
+  <img src="file:///workspace/ebook/assets/stock/sunset.jpg" alt="Tempo próprio não é egoísmo — é manutenção" />
+  <figcaption>Tempo próprio não é egoísmo — é manutenção</figcaption>
+</figure><ul class="checklist">
 <li><span class="box"></span><span>Meu bloco está no calendário (com alarme)</span></li>
 <li><span class="box"></span><span>A casa sabe que esse horário existe</span></li>
 <li><span class="box"></span><span>Eu não uso esse bloco só para “adiantar casa”</span></li>
 <li><span class="box"></span><span>Eu desligo notificações</span></li>
 <li><span class="box"></span><span>Eu escolho algo que me devolve energia (não só produtividade)</span></li>
 </ul>
-<p class="callout"><strong>Permissão necessária:</strong></p>
+<div class="tip"><strong>Permissão necessária:</strong></div>
 <p>Você pode deixar a louça para depois e escolher a si mesma por 20 minutos.</p>
-<hr class="soft-rule" />
-<h3 class="action-title">Mini plano de ação</h3>
-<ol>
+<div class="divider"><span></span><span></span><span></span></div>
+<h3 class="action-h">Mini plano de ação</h3>
+<ol class="steps">
 <li>Marque <strong>3 blocos azuis</strong> na próxima semana (mesmo de 10–30 min).</li>
 <li>Avise a família: “Isso é o meu horário.”</li>
 <li>Prepare a cena das crianças antes (atividade pronta).</li>
 <li>Depois do bloco, anote: <em>Como eu me senti?</em></li>
 <li>Repita. Ajuste. Não cancele por culpa.</li>
 </ol>
-<hr class="soft-rule" />
-</section>
-<section class="chapter">
-<div class="chapter-hero">
-<img src="file:///workspace/ebook/assets/cap4-autonomia.png" alt="Capítulo 4" />
-<div class="chapter-hero-overlay">
-<span class="chapter-kicker">Capítulo 4</span>
-<h1>Filhos que ajudam (de verdade)</h1>
-<p class="chapter-sub">Criação de autonomia e participação das crianças na rotina</p>
-</div></div>
-<h3 class="pain-title">O erro mais comum</h3>
+<div class="divider"><span></span><span></span><span></span></div></div></section>
+<section class="chapter" style="--accent:#c44569">
+  <div class="hero">
+    <img src="file:///workspace/ebook/assets/stock/play.jpg" alt="Filhos que ajudam (de verdade)" />
+    <div class="hero-shade"></div>
+    <div class="hero-copy">
+      <span class="badge">Capítulo 4</span>
+      <h1>Filhos que ajudam (de verdade)</h1>
+      <p>Autonomia e participação das crianças na rotina</p>
+    </div>
+  </div>
+  <div class="chapter-body"><h3 class="eyebrow-title">O erro mais comum</h3>
 <p>Pedir ajuda só quando você já está no limite.</p>
 <p>Aí vira grito, resistência e a frase: <em>“Deixa, eu mesma faço — é mais rápido.”</em></p>
 <p>Sim, no começo é mais rápido fazer sozinha.</p>
 <p>Mas cada vez que você faz tudo, treina a casa a depender de você para tudo.</p>
 <p>Autonomia não é “mão de obra infantil”.</p>
 <p>É educação para a vida — e oxigênio para a mãe.</p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Princípios para ensinar ajuda sem guerra</h3>
-<ol>
+<ol class="steps">
 <li><strong>Mostre 1 vez, faça junto 2 vezes, deixe fazer 3 vezes</strong></li>
 <li><strong>Uma tarefa por vez</strong> (clareza &gt; lista gigante)</li>
 <li><strong>Padrão “bom o bastante”</strong> (cama de criança não precisa parecer hotel)</li>
 <li><strong>Elogie esforço e processo</strong>, não só resultado</li>
 <li><strong>Consequência natural &gt; sermão</strong> (brinquedo fora do lugar = brinquedo pausado por um tempo)</li>
 </ol>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">O que cada faixa etária pode fazer (guia prático)</h3>
-<blockquote>Adapte à maturidade do seu filho. Idade é referência, não prisão.</blockquote>
+<figure class="photo-break">
+  <img src="file:///workspace/ebook/assets/stock/kids-2.jpg" alt="Cada idade pode contribuir de um jeito" />
+  <figcaption>Cada idade pode contribuir de um jeito</figcaption>
+</figure>
+<blockquote class="quote">Adapte à maturidade do seu filho. Idade é referência, não prisão.</blockquote>
 <h4>2–3 anos</h4>
-<ul>
+<ul class="bullets">
 <li>Colocar brinquedos no cesto</li>
 <li>Levar roupa suja ao cesto</li>
 <li>Guardar sapatos na entrada</li>
@@ -851,7 +1023,7 @@ tr:nth-child(even) td { background: var(--sand); }
 <li>Desligar luz (com supervisão)</li>
 </ul>
 <h4>4–5 anos</h4>
-<ul>
+<ul class="bullets">
 <li>Arrumar a própria cama (versão simples)</li>
 <li>Colocar e retirar sua louça da mesa</li>
 <li>Ajudar a separar roupa (cores)</li>
@@ -860,7 +1032,7 @@ tr:nth-child(even) td { background: var(--sand); }
 <li>Regar planta</li>
 </ul>
 <h4>6–8 anos</h4>
-<ul>
+<ul class="bullets">
 <li>Montar lanche simples</li>
 <li>Aspirar um cômodo</li>
 <li>Dobrar panos / roupas simples</li>
@@ -869,7 +1041,7 @@ tr:nth-child(even) td { background: var(--sand); }
 <li>Ajudar irmãos menores (buscar fralda, entreter 5 min)</li>
 </ul>
 <h4>9–12 anos</h4>
-<ul>
+<ul class="bullets">
 <li>Preparar café simples / lanche</li>
 <li>Lavar e estender uma carga (com orientação)</li>
 <li>Cozinhar receita fácil com supervisão</li>
@@ -877,38 +1049,45 @@ tr:nth-child(even) td { background: var(--sand); }
 <li>Ajudar no cardápio / lista de compras</li>
 <li>Cuidar de pet / irmão em tarefas específicas</li>
 </ul>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Sistema de missões diárias (simples e sustentável)</h3>
-<p>Em vez de 15 tarefas, use o modelo:</p>
+<p>Em vez de 15 tarefas, use o modelo:</p><div class="duo">
+  <figure><img src="file:///workspace/ebook/assets/stock/kids-2.jpg" alt="Participar cria pertencimento" /><figcaption>Participar cria pertencimento</figcaption></figure>
+  <figure><img src="file:///workspace/ebook/assets/stock/toys.jpg" alt="Missões curtas &gt; sermões longos" /><figcaption>Missões curtas &gt; sermões longos</figcaption></figure>
+</div></p>
 <p><strong>Cada criança = 1 missão fixa + 1 missão do dia</strong></p>
 <p>Exemplo:</p>
-<ul>
+<ul class="bullets">
 <li>Missão fixa: guardar sapatos e casaco</li>
 <li>Missão do dia: ajudar a por a mesa</li>
 </ul>
 <p>Quadro simples na parede:</p>
-<div class="table-wrap"><table>
-<thead><tr><th>Nome</th><th>Missão fixa</th><th>Missão do dia</th><th>Feito?</th></tr></thead><tbody>
+<div class="table-wrap"><table><thead><tr>
+<th>Nome</th><th>Missão fixa</th><th>Missão do dia</th><th>Feito?</th>
+</tr></thead><tbody>
 <tr><td>Filho 1</td><td>Cesto de brinquedos</td><td>Mesa</td><td>☐</td></tr>
 <tr><td>Filho 2</td><td>Sapatos</td><td>Lixo banheiro</td><td>☐</td></tr>
 <tr><td>Filho 3</td><td>Roupa suja</td><td>Guardar livros</td><td>☐</td></tr>
 </tbody></table></div>
 <p>No começo, você lidera com timer de 10 minutos em família: <strong>“Missão da casa!”</strong></p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Como pedir para criança colaborar (frases que funcionam melhor)</h3>
 <p>Evite: <em>“Você nunca me ajuda!”</em></p>
 <p>Prefira:</p>
-<ul>
+<ul class="bullets">
 <li>“Agora é hora da missão da casa. Você fica com os sapatos.”</li>
 <li>“Quando a sala estiver transitável, a gente liga o desenho.”</li>
 <li>“Eu faço o fogão, você faz os brinquedos. Juntos fica rápido.”</li>
 <li>“Obrigado por cuidar da sua parte. Isso ajuda a família.”</li>
 </ul>
 <p>Conecte ajuda a pertencimento, não só a obediência.</p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Autonomia matinal e noturna (o que mais reduz sua carga)</h3>
 <h4>Checklist matinal infantil (visual)</h4>
-<ul class="checklist">
+<figure class="photo-break">
+  <img src="file:///workspace/ebook/assets/stock/smile.jpg" alt="Elogie o esforço, não só o resultado" />
+  <figcaption>Elogie o esforço, não só o resultado</figcaption>
+</figure><ul class="checklist">
 <li><span class="box"></span><span>Banheiro</span></li>
 <li><span class="box"></span><span>Roupa</span></li>
 <li><span class="box"></span><span>Café</span></li>
@@ -925,10 +1104,10 @@ tr:nth-child(even) td { background: var(--sand); }
 <li><span class="box"></span><span>Pijama + dentes</span></li>
 </ul>
 <p>Imprima com ícones para quem ainda não lê. Autonomia começa no visual.</p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Quando eles resistem</h3>
 <p>Roteiro curto:</p>
-<ol>
+<ol class="steps">
 <li><strong>Conexão</strong> (1 minuto): “Eu sei que você queria brincar.”</li>
 <li><strong>Expectativa clara:</strong> “E também temos a missão de 5 minutos.”</li>
 <li><strong>Escolha limitada:</strong> “Você quer guardar os Lego ou os livros primeiro?”</li>
@@ -936,32 +1115,33 @@ tr:nth-child(even) td { background: var(--sand); }
 <li><strong>Fechamento:</strong> “Missão cumprida. Obrigada.”</li>
 </ol>
 <p>Se a resistência é crônica, a tarefa pode estar grande demais. Diminua.</p>
-<hr class="soft-rule" />
-<h3 class="action-title">Mini plano de ação</h3>
-<ol>
+<div class="divider"><span></span><span></span><span></span></div>
+<h3 class="action-h">Mini plano de ação</h3>
+<ol class="steps">
 <li>Escolha <strong>1 missão fixa por filho</strong> esta semana.</li>
 <li>Ensine no modo: eu mostro → fazemos juntos → você faz.</li>
 <li>Use timer familiar de 10 minutos 1x por dia.</li>
 <li>Celebre a participação (não a perfeição).</li>
 <li>Na semana seguinte, adicione só mais 1 camada.</li>
 </ol>
-<hr class="soft-rule" />
-</section>
-<section class="chapter">
-<div class="chapter-hero">
-<img src="file:///workspace/ebook/assets/cap5-calma.png" alt="Capítulo 5" />
-<div class="chapter-hero-overlay">
-<span class="chapter-kicker">Capítulo 5</span>
-<h1>Calma no meio do caos</h1>
-<p class="chapter-sub">Saúde mental e equilíbrio emocional no dia a dia</p>
-</div></div>
-<h3 class="pain-title">O caos não é falha moral</h3>
+<div class="divider"><span></span><span></span><span></span></div></div></section>
+<section class="chapter" style="--accent:#ffc857">
+  <div class="hero">
+    <img src="file:///workspace/ebook/assets/stock/calm-2.jpg" alt="Calma no meio do caos" />
+    <div class="hero-shade"></div>
+    <div class="hero-copy">
+      <span class="badge">Capítulo 5</span>
+      <h1>Calma no meio do caos</h1>
+      <p>Saúde mental e equilíbrio emocional no dia a dia</p>
+    </div>
+  </div>
+  <div class="chapter-body"><h3 class="eyebrow-title">O caos não é falha moral</h3>
 <p>Casa barulhenta, irmãos brigando, leite derramado, atraso na saída, mensagem urgente: isso não significa que você está falhando. Significa que você está vivendo uma fase de alta demanda.</p>
 <p>A meta não é eliminar o caos.</p>
 <p>É <strong>não se perder dentro dele</strong>.</p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Sinais de que sua mente pediu socorro</h3>
-<ul>
+<ul class="bullets">
 <li>irritabilidade constante</li>
 <li>sensação de “estou sempre atrasada na vida”</li>
 <li>culpa por descansar</li>
@@ -972,11 +1152,15 @@ tr:nth-child(even) td { background: var(--sand); }
 </ul>
 <p>Se você se reconheceu: sem julgamento. Só informação.</p>
 <p>Informação permite cuidado.</p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Kit de primeiros socorros emocionais (use no calor do momento)</h3>
+<figure class="photo-break">
+  <img src="file:///workspace/ebook/assets/stock/time-1.jpg" alt="No pico do estresse: pare o corpo primeiro" />
+  <figcaption>No pico do estresse: pare o corpo primeiro</figcaption>
+</figure>
 <p>Quando bater o pico de estresse:</p>
 <h4>1) Pare o corpo (60–90 segundos)</h4>
-<ul>
+<ul class="bullets">
 <li>pés no chão</li>
 <li>ombros para baixo</li>
 <li>expire mais longo que a inspiração (ex.: inspira 4, expira 6)</li>
@@ -985,22 +1169,22 @@ tr:nth-child(even) td { background: var(--sand); }
 <p>“Isso é sobrecarga. Não é perigo. Eu posso fazer o próximo passo pequeno.”</p>
 <h4>3) Escolha o próximo passo mínimo</h4>
 <p>Não resolva o dia. Resolva o próximo minuto:</p>
-<ul>
+<ul class="bullets">
 <li>água no chão → pano</li>
 <li>criança gritando → abaixar e validar</li>
 <li>atraso → o que é essencial para sair agora</li>
 </ul>
 <h4>4) Frase âncora (escolha a sua)</h4>
-<ul>
+<ul class="bullets">
 <li>“Eu não preciso fazer tudo agora.”</li>
 <li>“Feito é melhor que perfeito.”</li>
 <li>“Eu posso ser uma mãe boa e cansada ao mesmo tempo.”</li>
 <li>“Um passo. Só um.”</li>
 </ul>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Prevenção: hábitos que protegem sua saúde mental</h3>
 <h4>1) Reduza entradas de estímulo</h4>
-<ul>
+<ul class="bullets">
 <li>mute grupos que só aumentam ansiedade</li>
 <li>limite scroll noturno</li>
 <li>escolha 1 horário para mensagens não urgentes</li>
@@ -1008,14 +1192,17 @@ tr:nth-child(even) td { background: var(--sand); }
 <h4>2) Tenha rituais de transição</h4>
 <p>Seu cérebro precisa saber que uma parte do dia acabou.</p>
 <p>Exemplos:</p>
-<ul>
+<ul class="bullets">
 <li>chá depois de colocar para dormir</li>
 <li>banho com uma música</li>
 <li>5 minutos de caderno: “3 coisas que eu dei conta hoje”</li>
 </ul>
 <h4>3) Construa uma rede mínima de apoio</h4>
 <p>Lista de emergência (escreva agora):</p>
-<ul class="checklist">
+<figure class="photo-break">
+  <img src="file:///workspace/ebook/assets/stock/sunset.jpg" alt="Você pode ser uma mãe boa e cansada ao mesmo tempo" />
+  <figcaption>Você pode ser uma mãe boa e cansada ao mesmo tempo</figcaption>
+</figure><ul class="checklist">
 <li><span class="box"></span><span>1 pessoa para desabafar</span></li>
 <li><span class="box"></span><span>1 pessoa para ajuda prática</span></li>
 <li><span class="box"></span><span>1 recurso profissional (médico, terapeuta, conselheira, grupo de mães)</span></li>
@@ -1024,29 +1211,32 @@ tr:nth-child(even) td { background: var(--sand); }
 <h4>4) Aceite o “modo sobrevivência” em fases intensas</h4>
 <p>Doença em casa, dentição, mudança, puerpério, adaptação em outro país (sim, Alemanha também conta):</p>
 <p>nesses períodos, a barra desce. Sobreviver com vínculo já é vitória.</p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Casal, família e carga mental</h3>
-<p>Carga mental é lembrar de tudo: tamanho do sapato, vacina, presente da festa, comida, roupa de inverno, data da reunião.</p>
+<p>Carga mental é lembrar de tudo: tamanho do sapato, vacina, presente da festa, comida, roupa de inverno, data da reunião.</p><div class="duo">
+  <figure><img src="file:///workspace/ebook/assets/stock/calm-1.jpg" alt="Respirar também é produtividade" /><figcaption>Respirar também é produtividade</figcaption></figure>
+  <figure><img src="file:///workspace/ebook/assets/stock/journal.jpg" alt="Rituais que protegem sua mente" /><figcaption>Rituais que protegem sua mente</figcaption></figure>
+</div></p>
 <p>Para aliviar:</p>
-<ol>
+<ol class="steps">
 <li>Tire da cabeça e coloque no papel/app compartilhado.</li>
 <li>Divida <strong>donos de área</strong> (ex.: um responsável por escola, outro por saúde).</li>
 <li>Faça reunião semanal de 15 minutos: “O que vem pela frente?”</li>
 <li>Troque “me ajuda” por “fica responsável por X até o fim”.</li>
 </ol>
 <p>Se não há parceiro, a externalização ainda vale: quadro, alarmes, checklist, ajuda paga pontual quando possível, troca com outra mãe.</p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Autocompaixão prática (não piegas — útil)</h3>
 <p>No fim do dia, faça a revisão gentil:</p>
-<ul>
+<ul class="bullets">
 <li>O que eu fiz hoje que cuidou da minha família?</li>
 <li>Onde eu fui dura demais comigo?</li>
 <li>O que eu posso fazer diferente amanhã em <strong>1%</strong>?</li>
 </ul>
 <p>Evite a auditoria cruel: “Eu não fiz nada.”</p>
 <p>Você fez. Só não foi documentado em stories.</p>
-<hr class="soft-rule" />
-<h3 class="checklist-title">Checklist diário de saúde mental da mãe</h3>
+<div class="divider"><span></span><span></span><span></span></div>
+<h3 class="check-h">Checklist diário de saúde mental da mãe</h3>
 <ul class="checklist">
 <li><span class="box"></span><span>Bebi água</span></li>
 <li><span class="box"></span><span>Comi algo com proteína (não só resto do prato infantil)</span></li>
@@ -1055,25 +1245,25 @@ tr:nth-child(even) td { background: var(--sand); }
 <li><span class="box"></span><span>Reduzi 1 estímulo desnecessário</span></li>
 <li><span class="box"></span><span>Falei comigo como falaria com uma amiga</span></li>
 </ul>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">Quando buscar ajuda profissional</h3>
 <p>Procure apoio se houver tristeza persistente, ansiedade que paralisa, medo constante, irritação explosiva, sensação de vazio, ou pensamento de que todos ficariam melhores sem você. Isso não é fraqueza — é cuidado. Na Alemanha, você pode começar pelo <em>Hausarzt</em>, linhas de apoio locais, ou profissionais de saúde mental. Se estiver em crise, busque emergência local.</p>
-<hr class="soft-rule" />
-<h3 class="action-title">Mini plano de ação</h3>
-<ol>
+<div class="divider"><span></span><span></span><span></span></div>
+<h3 class="action-h">Mini plano de ação</h3>
+<ol class="steps">
 <li>Escolha <strong>1 frase âncora</strong> e cole na geladeira.</li>
 <li>Monte sua <strong>lista de apoio</strong> com nomes reais.</li>
 <li>Instale um ritual noturno de 5 minutos.</li>
 <li>Proteja 10 minutos seus amanhã.</li>
 <li>Quando o caos vier, pratique o kit de primeiros socorros — sem se cobrar perfeição emocional.</li>
 </ol>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h2>Conclusão</h2>
 <h3 class="h3">Você não precisa dar conta de tudo. Precisa de um sistema que te carregue nos dias difíceis.</h3>
 <p>Se existe uma mensagem para levar deste e-book, é esta:</p>
-<p class="callout"><strong>Você não é preguiçosa. Você está sobrecarregada — e sobrecarga pede método, não milagre.</strong></p>
+<div class="tip"><strong>Você não é preguiçosa. Você está sobrecarregada — e sobrecarga pede método, não milagre.</strong></div>
 <p>Organizamos juntas:</p>
-<ol>
+<ol class="steps">
 <li>a cozinha, para parar de decidir no desespero;</li>
 <li>a casa, para fluir em ciclos curtos;</li>
 <li>o tempo, para caber você no seu próprio dia;</li>
@@ -1083,25 +1273,25 @@ tr:nth-child(even) td { background: var(--sand); }
 <p>Não tente aplicar os cinco capítulos amanhã às 7h.</p>
 <p>Escolha <strong>um capítulo</strong> e viva-o por 7 dias.</p>
 <p>Sugestão de ordem para começar:</p>
-<ol>
+<ol class="steps">
 <li>Menu de emergência + cardápio simples (Cap. 1)</li>
 <li>Âncoras de manhã e noite (Cap. 2)</li>
 <li>10 minutos seus no calendário (Cap. 3)</li>
 </ol>
 <p>Pequeno. Constante. Real.</p>
 <p>Você está construindo uma casa que funciona — e uma mãe que permanece inteira dentro dela.</p>
-<hr class="soft-rule" />
+<div class="divider"><span></span><span></span><span></span></div>
 <h2>Chamada para ação (CTA)</h2>
 <p>Agora eu quero te convidar a dar o próximo passo:</p>
 <h3 class="h3">1) Escolha seu desafio de 7 dias</h3>
 <p>Marque no Stories / no caderno / no grupo de mães:</p>
-<blockquote>“Meu foco desta semana é: _______________.”</blockquote>
+<blockquote class="quote">“Meu foco desta semana é: _______________.”</blockquote>
 <h3 class="h3">2) Me conta o que mais doeu — e o que mais ajudou</h3>
 <p>Seu feedback molda os próximos e-books da coleção.</p>
 <p>Comenta, manda mensagem, responde o formulário (se houver link na bio).</p>
 <h3 class="h3">3) Prepare-se para os próximos volumes da coleção <strong>Organização Real para Mães</strong></h3>
 <p>Em breve:</p>
-<ul>
+<ul class="bullets">
 <li><strong>E-book 2:</strong> Rotina fora de casa — escola, deslocamentos e vida na Alemanha sem surtos</li>
 <li><strong>E-book 3:</strong> Casa reset em 30 minutos — checklists por cômodo para famílias grandes</li>
 <li><strong>E-book 4:</strong> Mãe criadora — produzir conteúdo digital sem abandonar a presença real com os filhos</li>
@@ -1120,13 +1310,11 @@ tr:nth-child(even) td { background: var(--sand); }
 <p>E isso começa com um sistema leve, repetível e humano — exatamente como a sua vida real.</p>
 <p>Com carinho e parceria nessa jornada,</p>
 <p><strong>Sua companheira de rotina real</strong> 💛</p>
-<hr class="soft-rule" />
-</section>
-<section class="extras-section">
-<h2>Extras práticos (anexos rápidos)</h2>
+<div class="divider"><span></span><span></span><span></span></div>
 <h3 class="h3">A) Cardápio semanal em branco</h3>
-<div class="table-wrap"><table>
-<thead><tr><th>Dia</th><th>Almoço</th><th>Jantar</th><th>Lanche</th><th>Notas</th></tr></thead><tbody>
+<div class="table-wrap"><table><thead><tr>
+<th>Dia</th><th>Almoço</th><th>Jantar</th><th>Lanche</th><th>Notas</th>
+</tr></thead><tbody>
 <tr><td>Seg</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Ter</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Qua</td><td></td><td></td><td></td><td></td></tr>
@@ -1145,7 +1333,7 @@ tr:nth-child(even) td { background: var(--sand); }
 <li><span class="box"></span><span>Bancada limpa</span></li>
 <li><span class="box"></span><span>Lixo reunido</span></li>
 </ul>
-<h3 class="checklist-title">C) Checklist “amanhã mais leve” (noite anterior)</h3>
+<h3 class="check-h">C) Checklist “amanhã mais leve” (noite anterior)</h3>
 <ul class="checklist">
 <li><span class="box"></span><span>Roupas separadas</span></li>
 <li><span class="box"></span><span>Mochilas prontas</span></li>
@@ -1155,16 +1343,89 @@ tr:nth-child(even) td { background: var(--sand); }
 <li><span class="box"></span><span>Meu bloco de tempo (mesmo curto) marcado</span></li>
 </ul>
 <h3 class="h3">D) Frases âncora para a geladeira</h3>
-<ol>
+<ol class="steps">
 <li>Feito &gt; perfeito.</li>
 <li>Família grande vive em sistemas, não em milagres.</li>
 <li>Eu também mereço descanso.</li>
 <li>Uma missão de cada vez.</li>
 <li>Hoje eu escolho o próximo passo pequeno.</li>
 </ol>
-<hr class="soft-rule" />
-<p class="footer-note">Fim do E-book 1 — Rotina Leve com Família Grande</p>
-<p class="footer-note">Coleção: Organização Real para Mães</p>
-</section></div>
+<div class="divider"><span></span><span></span><span></span></div>
+<p class="fine">Fim do E-book 1 — Rotina Leve com Família Grande</p>
+<p class="fine">Coleção: Organização Real para Mães</p></div></section>
+  
+    <section class="chapter big-close" style="--accent:#c44569">
+      <div class="hero">
+        <img src="file:///workspace/ebook/assets/stock/family.jpg" alt="Conclusão" />
+        <div class="hero-shade"></div>
+        <div class="hero-copy">
+          <span class="badge">Conclusão</span>
+          <h1>Você não precisa dar conta de tudo</h1>
+          <p>Você precisa de um sistema que te carregue nos dias difíceis.</p>
+        </div>
+      </div>
+      <div class="chapter-body">
+        <div class="duo">
+  <figure><img src="file:///workspace/ebook/assets/stock/smile.jpg" alt="Progresso pequeno conta" /><figcaption>Progresso pequeno conta</figcaption></figure>
+  <figure><img src="file:///workspace/ebook/assets/stock/sunset.jpg" alt="Sustentável &gt; perfeito" /><figcaption>Sustentável &gt; perfeito</figcaption></figure>
+</div>
+        
+      </div>
+    </section>
+    
+  
+    <section class="extras pad">
+      <div class="extras-banner">
+        <h2>Extras práticos</h2>
+        <p style="margin:6px 0 0;color:rgba(255,255,255,.95)">Checklists prontos para copiar, imprimir e colar na geladeira.</p>
+      </div>
+      <figure class="photo-break">
+  <img src="file:///workspace/ebook/assets/stock/checklist-img.jpg" alt="Tire da cabeça. Coloque no papel." />
+  <figcaption>Tire da cabeça. Coloque no papel.</figcaption>
+</figure>
+      <h3 class="h3">A) Cardápio semanal em branco</h3>
+<div class="table-wrap"><table><thead><tr>
+<th>Dia</th><th>Almoço</th><th>Jantar</th><th>Lanche</th><th>Notas</th>
+</tr></thead><tbody>
+<tr><td>Seg</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Ter</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Qua</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Qui</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Sex</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Sáb</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Dom</td><td></td><td></td><td></td><td></td></tr>
+</tbody></table></div>
+<h3 class="h3">B) Reset da casa em 15 minutos</h3>
+<ul class="checklist">
+<li><span class="box"></span><span>Timer ligado</span></li>
+<li><span class="box"></span><span>Louça na máquina/pia organizada</span></li>
+<li><span class="box"></span><span>Brinquedos no cesto</span></li>
+<li><span class="box"></span><span>Sofá liberado</span></li>
+<li><span class="box"></span><span>Entrada desobstruída</span></li>
+<li><span class="box"></span><span>Bancada limpa</span></li>
+<li><span class="box"></span><span>Lixo reunido</span></li>
+</ul>
+<h3 class="check-h">C) Checklist “amanhã mais leve” (noite anterior)</h3>
+<ul class="checklist">
+<li><span class="box"></span><span>Roupas separadas</span></li>
+<li><span class="box"></span><span>Mochilas prontas</span></li>
+<li><span class="box"></span><span>Café/lanche pensado</span></li>
+<li><span class="box"></span><span>Proteína do jantar descongelando</span></li>
+<li><span class="box"></span><span>1 prioridade do dia definida</span></li>
+<li><span class="box"></span><span>Meu bloco de tempo (mesmo curto) marcado</span></li>
+</ul>
+<h3 class="h3">D) Frases âncora para a geladeira</h3>
+<ol class="steps">
+<li>Feito &gt; perfeito.</li>
+<li>Família grande vive em sistemas, não em milagres.</li>
+<li>Eu também mereço descanso.</li>
+<li>Uma missão de cada vez.</li>
+<li>Hoje eu escolho o próximo passo pequeno.</li>
+</ol>
+<div class="divider"><span></span><span></span><span></span></div>
+<p class="fine">Fim do E-book 1 — Rotina Leve com Família Grande</p>
+<p class="fine">Coleção: Organização Real para Mães</p>
+    </section>
+    
 </body>
 </html>
